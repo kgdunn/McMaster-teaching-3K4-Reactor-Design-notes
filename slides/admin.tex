@@ -24,7 +24,8 @@
 \begin{frame}\frametitle{Acknowledgments}
 	Dr. Prashant Mhaskar
 	\begin{itemize}
-		\item	All the class notes (slides) we will use are his
+		\item	Most of the class notes (slides) we will use are his
+		\item	Today's slides are mine; but we will use his in the next classes
 	\end{itemize}
 \end{frame}
 
@@ -67,7 +68,7 @@
 \begin{frame}\frametitle{Video and audio}
 	\begin{itemize}
 		\item	Available for all my courses
-		\item	Purpose: for your review, and to prepare for assignments and exams 
+		\item	Purpose: for your review, and to prepare for assignments, tutorials and exams 
 		\item	Might be useful if you miss a class
 		\item	As long as feasible, I will try to video record all classes
 		\begin{itemize}
@@ -176,14 +177,169 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}\frametitle{Why study reactor design?}
+	\begin{itemize}
+		\item	It is an unique course to Chemical Engineering
+			\begin{itemize}
+				\item	Reactor Design $\qquad\,\,$[$\sim 25$\% of capital costs]
+				\item	Separation Processes [$\sim 75$\% of capital costs]
+			\end{itemize}
+			\vspace{12pt}
+			while other engineers and scientists also study:
+			\begin{itemize}
+				\item	numerical methods
+				\item	simulation and modelling
+				\item	thermodynamics
+				\item	fluid flow and heat transfer
+				\item	statistics
+				\item	process control
+				\item	bioprocessing
+				\item	polymers
+				\item	problem solving
+			\end{itemize}
+	\end{itemize}
+	But this is not not a good justification.
+\end{frame}
+
+\begin{frame}\frametitle{Why study reactor design?}
+	\begin{exampleblock}{}
+		\begin{center}
+			Chemical Engineering is about ``processing'' material.
+		\end{center}
+	\end{exampleblock}
+	and at the heart of any processing system is usually a reaction.
+	
+	\vspace{12pt}
+	\begin{itemize}
+		\item	Reactors are some of the least impressive looking units
+		\item	However, the entire plant economics and profitability are dependent on the reactor
+		\item	Get the reactor design wrong and the entire plant can be a failure
+		\item	Plenty of time spent on its design and optimization (years ... not months are often taken)
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}\frametitle{Why study reactor design?}
+	But most usefully, and the most likely case you will find: 
+	\begin{exampleblock}{}
+		You are working at an existing plant, with the reactor running for many years and producing product profitably.
+	\end{exampleblock}
+	\vspace{12pt}
+	\begin{enumerate}
+		\item	A recession hits (e.g. 2007/2008/2009), and you need to scale back. Less demand for your product.
+		\begin{itemize}
+			\item	What reduced flow rate do you operate at?
+			\item	Will the reaction still go the required conversion?
+		\end{itemize}
+		\vspace{12pt}
+		\item	There is increased demand for your product, right away. No time to design, install and commission a second reactor.
+		\begin{itemize}
+			\item	What increased flow rate do we operate at?
+			\item	What will happen to side-reactions and impurities?
+			\item	Can we still get the same conversion in the fixed-size reactor?
+			\item	Maybe change the catalyst, or operate at a higher temperature?
+		\end{itemize}
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{Why study reactor design?}
+	\begin{enumerate}
+		\setcounter{enumi}{2}
+		\item	Competitors from another country/company/using a different technology are making the same product, at a cheaper price.
+		\begin{itemize}
+			\item	Can you operate at lower temperatures to save money?
+			\item	What can you adjust to increase conversion
+			\item	How can you further reduce impurities in the outlet, creating a more valuable product for your customer?
+		\end{itemize}
+		\begin{center}
+			\includegraphics[width=.75\textwidth]{\imagedir/examples/competitor-product/competitor-product.png}
+		\end{center}
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{What is ``Reactor Design''}
+	\begin{exampleblock}{}
+		How to produce a {\color{purple}{specified product}}, at a {\color{orange}{given rate}}, from {\color{myGreen}{known reactants}}.
+	\end{exampleblock}
+	\vspace{12pt}
+	\begin{columns}[t]
+		\column{0.50\textwidth}
+			\textbf{Decisions we have to make}
+			\begin{itemize}
+				\item	What type of reactor do we use? Batch, plug-flow, tank, packed-bed, others...
+				\item	Will we operate isothermally, adiabatically, or a hybrid?
+				\item	At what temperature, pressure, compositions and flows do we operate?
+				\item	Which phases are present: liquid, solid, gas, or a hybrid?
+			\end{itemize}
+
+		\column{0.50\textwidth}
+			\textbf{What we will achieve}
+			\begin{itemize}
+				\item	The size of the reactor
+				\item	Composition of products leaving
+				\item	Temperatures in the reactor
+				\item	Pressure in the reactors, and pressure drop across it
+			\end{itemize}
+	\end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{What we won't be studying}
+	\begin{itemize}
+		\item	Design of the internals: heating/cooling tubing, flanges, baffles, motors, flanges, clean-in-place systems
+		\item	Design of systems with catalysis and mass-transfer limitations
+	\end{itemize}
+	\vspace{-12pt}
+	\begin{columns}[t]
+		\column{0.50\textwidth}
+			\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/examples/becomix/inside-becomix.jpg}
+	\end{center}
+		\column{0.50\textwidth}
+			\begin{center}
+				\includegraphics[width=0.7\textwidth]{\imagedir/reactors/examples/flickr-6240399099_97069db83c_o.jpg}
+				%\includegraphics[width=\textwidth]{\imagedir/reactors/examples/flickr-6276099367_4254173bb3_o-CC-BY-2.0-smaller.jpg}
+			\end{center}
+			\see{\emph{Above}: \href{http://www.flickr.com/photos/acwa/6240399099/}{flickr:\#6240399099}} 
+			
+			\see{\emph{Left}: reactor in a clean processing facility} 
+	\end{columns}	
+\end{frame}
+
+\begin{frame}\frametitle{What we won't be studying}
+	\begin{itemize}
+		\item	Non-ideal behaviour that is present in most systems 
+		\begin{itemize}
+			\item	though we will introduce it near the end of the course
+			\item	Does this CSTR obey all the assumptions?
+		\end{itemize}
+	\end{itemize}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/examples/autoclave-GMD.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{How this course is structured}
+	There are 8 main sections, spread over 12 weeks
+	\begin{enumerate}
+		\item	Mole balances 
+		\item	Conversion and reactor sizing
+		\item	Rate laws and stoichiometry
+		\item	Isothermal reactor design
+		\item	Collection and analysis of rate data
+		\item	Multiple reactions
+		\item	Steady-state nonisothermal reactor design 
+		\item	Distributions of residence times 
+	\end{enumerate}
+\end{frame}
+
 \begin{frame}\frametitle{Grading}
 	What we look for in the grading is demonstration that you/group: 
 	\begin{enumerate}
 		\item	understand the concept, 
 		\item	have the ability to apply the concept to new instances, 
 		\item	think creatively about problems, 
-		\item	my questions are seldom ``plug-and-chug''
-		\item	accuracy. 
+		\item	my questions are seldom ``plug-and-chug'',
+		\item	numerical accuracy, 
+		\item	grammar and spelling.
 	\end{enumerate}
 \end{frame}
 
@@ -198,7 +354,7 @@
 		\end{itemize}
 		\item	Late grading 
 		\begin{itemize}
-			\item	-30\% per day 
+			\item	\( -30 \)\% per day 
 			\item	2 ``late day'' credits for assignments 
 			\item	solutions posted after $\approx 2$ days of due date 
 		\end{itemize}
@@ -302,16 +458,4 @@
 		\item	Something due every 2nd week: see calendar
 	\end{itemize}
 \end{frame}
-
-\begin{frame}\frametitle{What this course is about}
-		There are 6 main sections, spread over 12 weeks
-	\begin{enumerate}
-		\item	adasd
-	\end{enumerate}
-\end{frame}
-
-\begin{frame}\frametitle{Section 1}
-
-\end{frame}
-
 
