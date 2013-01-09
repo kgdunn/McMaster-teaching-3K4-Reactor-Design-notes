@@ -1,0 +1,527 @@
+\begin{frame}\frametitle{Slide credits and notes}
+	\begin{itemize}
+		\item	These slides were created by Dr. Mhaskar.
+		\item	Minor modifications/additions by Kevin Dunn.
+	\end{itemize}
+	
+	\vspace{12pt}
+	\begin{itemize}
+		\item	Words in {\color{purple}{purple}} are definitions
+		\item	Words in \href{http://learnche.mcmaster.ca/3K4}{this colour} are hyperlinks
+		\item	Other colours are to emphasize points
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{What we are going to learn here}
+	Review of chemistry and chemical engineering topics
+	\begin{itemize}
+		\item	Rate of reaction
+		\item	Mole balances
+		\item	Batch reactors
+		\item	Continuous Tank Reactors (CSTRs)
+		\item	Tubular reactors
+		\item	Packed-bed reactors
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Rate of reaction} 
+	\begin{itemize}
+		\item	 Chemical reactions are said to occur when species lose their identity, e.g. by decomposition, combination or isomerization.
+		\begin{itemize}
+			\item	$ A  \longrightarrow B + C $ 
+			\item	$ A + B \longrightarrow C + D $ 
+			\item	\includegraphics[width=.45\textwidth]{\imagedir/reactors/examples/Wikipedia-Rasveratrol_isomerization.png}\qquad\see{\href{http://en.wikipedia.org/wiki/Isomerization}{http://en.wikipedia.org/wiki/Isomerization}}
+		\end{itemize}
+		\item	 {\color{purple}{Rate of reaction}} is expressed as the rate of formation of products. 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Rate of reaction} 
+	By definition: 
+	\begin{exampleblock}{}
+		\begin{center}
+			{\Large $r_j$ is defined as the rate of formation of species $j$ per unit volume}
+		\end{center}
+	\end{exampleblock}
+	\begin{itemize}
+		\item	\only<1>{{\color{purple}{formation}} $\equiv$ {\color{purple}{generation}}}
+				\only<2>{{\color{purple}{disappeared}} $\equiv$ {\color{purple}{consumed}}}
+		\item	 Consider the reaction $$ A + B \longrightarrow C + D $$ 
+		\begin{itemize}
+			\item	\only<1>{$r_A$ is the number of moles of species $A$ {\bf formed} per unit time per unit volume $\left[\dfrac{\text{mol}}{\text{L.s}}\right]$ or $\left[\dfrac{\text{mol}}{\text{m}^3\text{.s}}\right]$} 
+					\only<2>{$-r_A$ (now a positive quantity) is the number of moles of species $A$ {\bf disappearing} per unit time per unit volume $\left[\dfrac{\text{mol}}{\text{L.s}}\right]$ or $\left[\dfrac{\text{mol}}{\text{m}^3\text{.s}}\right]$} 
+			\item	\only<1>{$r_A < 0$ in this case; yes, the sign is important for reaction rates}
+					\only<2>{$-r_A > 0$ in this case} 
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[label=intensive-property]\frametitle{What affects $-r_A$ ?} 
+	\begin{itemize}
+		\item	 {Reaction rate is an \emph{\color{purple}intensive property} $-$ function of concentration and temperature, but not size or configuration of reactor.} 
+		\item	Thermo recall: an {\color{purple}{intensive property}} does \textbf{not} depend on the size or scale of the system.
+		
+				These are great properties to deal with: they apply whether we are dealing with
+				
+			\begin{columns}[c]
+				\column{0.50\textwidth}
+					\begin{center}
+						\includegraphics[width=1.0\textwidth]{\imagedir/reactors/examples/reactor-design-GMD-4-DETACLAD-Explosion-Clad.png}
+						
+						25m $\times$ 5m
+					\end{center}
+					%\see{Hydrometallurgy of Nickel and Cobalt 2009, The Metallurgical Society of the Canadian Institute of Mining, Metallurgy and Petroleum, Symposium}
+					% Published in Hydrometallurgy of Nickel and Cobalt 2009, Proceedings of the International Symposium 39th Annual Hydrometallurgy Meeting 
+					% The Metallurgical Society of the Canadian Institute of Mining, Metallurgy and Petroleum, Pages 181-193, 
+					% DETACLAD Explosion Clad for Autoclaves and Vessels, John G.Banker					
+				\column{0.05\textwidth}
+					or
+				\column{0.45\textwidth}
+					\begin{center}
+						\includegraphics[width=.8\textwidth]{\imagedir/reactors/examples/Wikipedia-Cell-Average_prokaryote_cell-_en.svg.png}
+
+						$\sim 1\text{ to }5\mu m$ 
+					\end{center}
+			\end{columns}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{What affects $-r_A$ ?} 
+	\begin{itemize}
+		\item	Generally: 
+		\begin{enumerate}
+			\item	temperature, $T$
+			\item	concentration, $C_j$
+			\item	pressure (for gas systems we generally use pressure instead of concentration), $P_j$
+			\item	catalysts (we won't consider this for now)
+		\end{enumerate}
+		\item	Rate law is an algebraic expression of the form 
+				\[
+					-r_A = \Biggl(k_A(T)\Biggr)\Biggl(f(C_A, C_B, \ldots)\Biggr)
+				\]
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Analyzing $-r_A$ dependence} 
+	\begin{itemize}
+		\item	 A bank lends money at the rate of 5\%. Does the interest depend on the amount borrowed? 
+		\item	 No, the interest rate is independent of the amount borrowed
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Analyzing $-r_A$ dependence} 
+	\begin{itemize}
+		\item	Does the ``amount'' of reaction depend on the volume, i.e. the size of the system, \emph{etc}? 
+		\item	No, the reaction rate is independent of the volume.
+		\item	The \textbf{number of moles} per unit volume determines concentration, which in turn determines the rate.
+		\item	So there is a dependence on the concentration, but not on the volume. 
+	\end{itemize}
+\end{frame}
+
+% \begin{frame}
+% 	\begin{itemize}
+% 		\item	{In heterogeneous systems, rate of reaction is usually expressed in terms other than volume. e.g. for a gas-solid catalytic reaction $-r_A'$ denotes the number of moles of $A$ reacting per unit time per unit mass of catalyst. (mol/s$\cdot$g catalyst)} 
+% 	\end{itemize}
+% \end{frame}
+
+\begin{frame}{Examples of reaction rate expressions}
+	For $$A\longrightarrow\text{products}$$ we might have 
+	$$-r_A = kC_A$$ or 
+	$$-r_A = kC_A^2$$ or 
+	$$-r_A = k\frac{k_1C_A}{1 + k_2C_A}$$
+	\emph{and many others are possible}.
+	
+	\vspace{12pt}
+	The last equation is common in bioreactor systems.
+\end{frame}
+
+\begin{frame}{How do we obtain these rate expressions?}
+	%\textbf{Remark:} $r_A$ independent of the stoichiometry, but mole balances use the stoichiometry (see later)
+	
+	\begin{itemize}
+		\item	Structure of the rate expression is guided by theory; trial and error testing
+		\vspace{12pt}
+		\item	We obtain the parameters from experiments (covered later)
+			\begin{itemize}
+				\item	e.g. $-r_A = kC_A^n$
+				\item	determine $k$ and $n$ from experimental data
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\section{General mole balance equation}
+\begin{frame}\frametitle{The general mole balance equation} 
+	We will use this over and over in the course. {\color{myOrange}{Let's understand this}}.
+
+	\begin{exampleblock}{}
+		A mole balance on species $j$ at any instant of time $t$, in an arbitrary system volume ($V_i$):
+		\begin{center}
+			\includegraphics[width=\textwidth]{\imagedir/reactors/mhaskar/ch1/MoleBalance5.pdf} 
+		\end{center}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}\frametitle{The general mole balance equation} 
+	
+		A \textbf{mole balance} (not a mass balance) on species $j$ at any instant of time $t$:
+
+		$$\text{In} + \text{Generated} - \text{Out} = \text{Accumulated}$$
+		\scalebox{0.70}{ 
+		\begin{minipage}
+			{1.0\linewidth}
+		\[ 
+			\begin{bmatrix}
+				\text{Rate of flow}\\
+				\text{of }j\text{ into}\\
+				\text{the system}\\
+				\text{(moles/time)} 
+			\end{bmatrix}
+			+ 
+			\begin{bmatrix}
+				\text{Rate of generation}\\
+				\text{of }j\text{ by chemical}\\
+				\text{reaction within}\\
+				\text{the system}\\
+				\text{(moles/time)} 
+			\end{bmatrix}
+			- 
+			\begin{bmatrix}
+				\text{Rate of flow}\\
+				\text{of }j\text{ out of}\\
+				\text{the system}\\
+				\text{(moles/time)} 
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				\text{Rate of}\\
+				\text{accumulation}\\
+				\text{of }j\text{ within}\\
+				\text{the system}\\
+				\text{(moles/time)} 
+			\end{bmatrix}
+		\] 
+		\end{minipage}
+		} $$ F_{j0} + G_j - F_j = \frac{dN_j}{dt} $$
+		\vspace{-4pt}
+		\begin{itemize}
+			\item	$G_j = \dfrac{\text{moles}}{\text{time}} = r_j \cdot V = \dfrac{\text{moles}}{(\text{time})(\text{volume})}\cdot\text{volume}$
+			\item	{\color{myOrange}{{\small Why don't we have a term for ``consumed''?}}}
+		\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{The general mole balance equation} 
+	\begin{itemize}
+		\item	We can subdivide the region into many subvolumes ($M$ of them), and for each subvolume $i = 1, 2, \ldots M$: 
+		\[
+			\Delta G_{ji} = r_{ji}\Delta V_i
+		\]
+		$\Delta G_{ji}$ is the rate of generation of $j$ within subvolume $i$ (chosen to be small enough so that all variables are constant, and therefore the reaction rate is the same in the subvolume) 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{The general mole balance equation} 
+	\begin{itemize}
+		\item	Then $$G_j = \sum_1^M\Delta G_{ji} = \sum_1^M r_{ji}\Delta V_i$$
+		 		an in the limit as $\Delta V_i\rightarrow0$ and $M\rightarrow\infty$ 
+				$$G_j = \int_V r_j dV$$ 
+				giving 
+				$$F_{j0} - F_j + \int_V r_j dV = \frac{dN_j}{dt}\eqno{\text{(1-4)}}$$ 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{The general mole balance equation} 
+	\begin{itemize}
+		\item	{\color{red}{\textbf{Note}}}: $\displaystyle\int_V r_j dV \longleftarrow$ the $r_j$ term is a function of $V$ and cannot be taken out of the integral.
+		\item	Wait a minute: you said ``Reaction rate is an {\color{purple}{intensive property}}'' (slide \autoref{intensive-property}), not a function of the volume/size/scale of the system
+		\begin{center}
+			\includegraphics[width=\textwidth]{\imagedir/}
+		\end{center}
+		
+		If all the system variables (temperature, pressure, concentration, etc.) are uniform throughout the volume, then the reaction rate is constant over the volume and
+		\begin{align*}
+			r_j(V)&=r_j&\\
+			G_j &=\int_V r_j(V)dV= r_j\int_V dV= r_j\cdot V\\
+			\\
+			\frac{\text{moles}}{\text{time}} &= \frac{\text{moles}}{\text{time}\cdot\text{volume}}\cdot{\text{volume}} 
+		\end{align*}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{The general mole balance equation} 
+	\begin{itemize}
+		\item	Now, let's apply to various reactor types. 
+	\end{itemize}
+\end{frame}
+
+\begin{comment}
+
+\section{Batch}
+\begin{frame}\frametitle{1.3 Batch reactors} 
+	\begin{itemize}
+		\item	No inflow or outflow. 
+		\item	Charge reactors with reactants then close up.
+		
+		\item	Typically perfectly mixed, so $\int_V r_j(V)dV$ can be replaced by $r_jV$ 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item	<1->{ The mole balance reduces to $$\frac{dN_j}{dt} = r_jV$$ } 
+		\item	<1->{\textbf{Note:} $V$ is \emph{not} assumed to be constant here. It could be a function of time or of the extent of reaction (and indirectly a function of time).} 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Problem 1.1} 
+	\begin{itemize}
+		\item	<1->{$$A\longrightarrow2B, -r_A = kC_A, k = 0.23\text{min}^{-1}$$ in a const volume batch reactor. $C_{A0} = 2$mol/L, $V=10$L. How long does it take to reduce the conc of $A$ in reactor to 0.2 mol/L? } 
+		\item	<1->{\textcolor{blue}{Solution: {\bf First solve analytically}} $$\frac{dN_A}{dt} = r_AV = -kC_AV$$ } 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Solution 1.1}
+	For const V,
+	\begin{align*}
+		&\frac{d(N_A/V)}{dt} = -kC_A\\
+		&\frac{dC_A}{dt} = -kC_A\\
+		&\Rightarrow \int_{C_{A0}}^{C_{Af}}\frac{dC_A}{C_A} = -k\int_0^{t_f}dt\\
+		&\Rightarrow \ln\frac{C_{Af}}{C_{A0}} = -kt_f 
+	\end{align*}
+\end{frame}
+
+\begin{frame}
+	\begin{align*}
+		\Rightarrow t_f &= -\frac{1}{k}\ln\left(\frac{C_{Af}}{C_{A0}}\right) 
+	\end{align*}
+	Now plug in the numbers 
+	\begin{align*}
+		t_f &= -\frac{1}{0.23}\ln\left(\frac{0.2}{2}\right)\\
+		&= 10\text{min} 
+	\end{align*}
+\end{frame}
+
+\begin{frame}\frametitle{Problem 1.2} 
+	In a well mixed reactor, starting with a reactant A at concentration $C_{A0}$ and volume $V$, a reaction with the rate expression $r_a=-kC_A$ takes place. However, every $\Delta t$, a volume $V_0$ is removed first and fresh volume of $V_0$ (at concentration $C_{A0}$) is inserted into the reactor. Determine the steady state profile for the system (meaning the profile of $C_A(t)$ repeats every $\Delta t$)? 
+\end{frame}
+
+\begin{frame}\frametitle{Solution 1.2} 
+	Consider the starting of a fresh interval at which the concentration of A in the reactor is $C_A^*$. Then, by a mole balance for a batch reactor (see before), one gets $$C_A(\Delta t)=C_A^*e^{{-k\Delta t}}$$ The number of moles removed=$$C_A^*e^{{-k\Delta t}}V_0$$
+\end{frame}
+
+\begin{frame}
+	The number of moles added=$$C_{A0}V_0$$ If a steady state is to be achieved, $$C_A^*e^{{-k\Delta t}} (V-V_0)+C_{A0}V_0=C_A^*V$$ This yields $$C_A^*(V-e^{{-k\Delta t}}(V-V_0))=C_{A0}V_0$$ 
+\end{frame}
+
+\begin{frame}
+	Further, $$C_A^*(V-e^{{-k\Delta t}}(V)+ V_0e^{{-k\Delta t}})=C_{A0}V_0$$ $$\Leftrightarrow C_A^*(V(1-e^{{-k\Delta t}})+V_0e^{{-k\Delta t}})=C_{A0}V_0$$ $$\Leftrightarrow C_A^*=\frac{C_{A0}V_0}{V(1-e^{{-k\Delta t}})+V_0e^{{-k\Delta t}}}$$
+	
+	Let us analyze for $\Delta t\rightarrow 0$. What does this mean?
+	
+	To do this, define $V_0/\Delta t=v_0$ (volumetric flow rate). 
+\end{frame}
+
+\begin{frame}
+	This gives $$C_A^*=\frac{C_{A0}v_0\Delta t}{V(1-e^{{-k\Delta t}})+v_0\Delta te^{{-k\Delta t}}}$$ Now taking the limit $\Delta t \rightarrow 0$, results in (L'Hospital's rule) $$C_A^*=\frac{C_{A0}v_0}{V(k)+v_0(1)}=\frac{C_{A0}}{1+k\tau}$$ Is this result expected? (In assignment 1, repeat this analysis, but `add' the fresh volume first and then remove the volume from the reactor) 
+\end{frame}
+
+\section{Continuous-flow}
+\subsection{CSTR} 
+\begin{frame}\frametitle{\normalsize 1.4 Continuous-Flow Reactors\\1.4.1 Continuous Tank Reactors (CTR) } 
+	\begin{columns}
+		\begin{column}
+			{0.6 
+			\textwidth} \vspace{-15mm} 
+			\begin{figure}
+				\rotatebox{90}{ 
+				\includegraphics[width=1.7in, height=2.7 in]{\imagedir/reactors/mhaskar/ch1/CSTR_unmixed_rotated.pdf}}\caption{A reactor schematic} 
+			\end{figure}
+		\end{column}
+		\hspace{-15mm} 
+		\begin{column}
+			{0.6 
+			\textwidth} 
+			\begin{itemize}
+				\vspace{-3mm} 
+				\item	At any given time, t, 
+				\item	$F$: Molar flow rate 
+				\item	$C$: Concentration 
+				\item	subscript $j$, jth species 
+				\item	subscript $0$, inlet stream 
+				\item	subscript $r$, reactor 
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	$C_{jr}$: Concentration of species j in the reactor 
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		
+		\item	Typically well mixed: System properties constant throughout reactor.
+		
+		$\Rightarrow$ product concentrations, temperatures, \emph{etc} same as that within tank.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{\normalsize 1.4 Continuous-Flow Reactors\\1.4.1 Continuous-Stirred Tank Reactors (CSTR) } 
+	\begin{columns}
+		\begin{column}
+			{0.6 
+			\textwidth} \vspace{-22mm} 
+			\begin{figure}
+				\rotatebox{90}{ 
+				\includegraphics[width=1.7in, height=2.7 in]{\imagedir/reactors/mhaskar/ch1/CSTR_rotated.pdf}}\caption{A CSTR schematic} 
+			\end{figure}
+		\end{column}
+		\hspace{-15mm} 
+		\begin{column}
+			{0.6 
+			\textwidth} 
+			\begin{itemize}
+				\vspace{-3mm} 
+				\item	At any given time, $t$ 
+				\item	$F$: Molar flow rate 
+				\item	$C$: Concentration 
+				\item	subscript $j$, $j^\text{th}$ species 
+				\item	subscript $0$, inlet stream 
+				\item	subscript $r$, reactor 
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	$C_{j}$: Concentration of species $j$ in the reactor 
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item	<1->{General Mole balance equation: $$F_{j0} - F_j + \int_V r_j (V) dV = \frac{dN_j}{dt}$$ } 
+		\item	<1->{ $\frac{dN_j}{dt} = 0$, (often analyzed at steady state, {\bf but not necessarily)}. } 
+		\item	<1->{ No spatial variation with reactors $$\Rightarrow \int_V r_j(V)dV = r_jV\Rightarrow \boxed{V = \frac{F_{j0} - F_j}{-r_j}}$$ } 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item	Note: Can relate to concentration via 
+		\begin{align*}
+			F_j &= C_jv\\
+			\frac{\text{moles}}{\text{time}} &= \frac{\text{moles}}{\text{vol}}\cdot\frac{\text{vol}}{\text{time}} 
+		\end{align*}
+		$$V = \frac{v_0C_{A0} - vC_A}{-r_A} \eqno{\text{(1-9)}}$$ Assignment 1 question: Rewrite the mole balance without assuming steady state. 
+	\end{itemize}
+\end{frame}
+
+\subsection{Tubular reactors} 
+\begin{frame}\frametitle{Tubular reactors} 
+	\vspace{-0.5em} 
+	\begin{itemize}
+		\item	Assume turbulent flow $\Rightarrow$ modelled as plug (no radial variation in concentration)
+		\item	Referred to as plug-flow reactor (PFR).
+		\item	Starting point - general mole balance. $$F_{j0} - F_j + \int_Vr_j(V)dV = \frac{dN_j}{dt} = 0$$ Apply to differential volume: $$F_j|_V - F_j|_{V + \Delta V} + r_j\Delta V = 0$$ 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	Rearranging and dividing by $\Delta V$, $$\left[\frac{F_j|_{V+\Delta V} - F_j|_V}{\Delta V}\right] = r_j$$ Taking limit as $\Delta V \rightarrow 0$ $$\boxed{\frac{dF_j}{dV} = r_j}$$ Integral form: $$V_1 = \int_0^{V_1}dV = \int_{F_{j0}}^{F_{j1}}\frac{dF_j}{r_j}$$ 
+\end{frame}
+
+\begin{frame}
+	\textbf{Remark 1}: Analysis does not assume constant cross-sectional area.
+	
+	$\Rightarrow$ applicable also to other geometries
+	
+	End up with same design equation.
+	
+	\textbf{Remark 2}: Furthermore, for liquids (why not for gases?) at steady state the volumetric flow rate is equal throughout the reactor, i.e., $v_o=v$
+\end{frame}
+
+\begin{frame}\frametitle{Problem 1.3}
+	
+	$$A\longrightarrow B\text{ in tubular reactors.}$$ Constant volumetric rate $v = 10$L/min. Reaction follows first-order kinetics with rate const $k = 0.23$min$^{-1}$. Determine the volume required to reduce conc. to $10\%$ of entering value? 
+\end{frame}
+
+\begin{frame}\frametitle{Solution 1.3} 
+	\begin{align*}
+		\frac{dF_A}{dV} &= -kC_A 
+	\end{align*}
+	Express design equation in terms of concentration: $$\frac{dF_A}{dV} = \frac{d(C_Av)}{dV} = v\frac{dC_A}{dA}$$ $$\therefore v\frac{dC_A}{dV} = r_A = -kC_A$$
+\end{frame}
+
+\begin{frame}
+	\begin{align*}
+		&\Rightarrow -\frac{v}{k}\int_{C_{A0}}^{C_A}\frac{dC_A}{C_A} = \int_0^VdV\\
+		&\Rightarrow -\frac{v}{k}[\ln C_A - \ln C_{A0}] = V\\
+		&\Rightarrow V = \frac{v}{k}\ln\frac{C_{A0}}{C_A} = 100\text{L} 
+	\end{align*}
+	Note: Plug in the numbers at the very last step. 
+\end{frame}
+
+\begin{frame}\frametitle{Problem 1.4}
+	
+	Consider a PFR (total volume $V_{PFR}$) with an inlet volumetric flow rate $v_0$ and concentration of A at $C_{A0}$, and an additional volumetric flow rate per Volume (along the length of the reactor) of $\tilde{v}_0$ at a concentration of A at $C_{A0}$. An elementary reaction with reaction rate $r_A=-kC_A$ takes place in the reactor. Determine the outlet concentration of A assuming constant density.
+\end{frame}
+
+\begin{frame}\frametitle{Solution 1.4}
+	
+	A mass balance on the differential volume yields: $$v\rho|_V - v\rho|_{V + \Delta V} + \rho\tilde{v}_0\Delta V = 0$$ i.e., $\frac{dv}{dV}=\tilde{v}_0$\\
+	A mole balance on the differential volume yields: $$vC_A|_V - vC_A|_{V + \Delta V} + C_{A0}\tilde{v}_0\Delta V -k C_A\Delta V= 0$$ i.e., $\frac{d(vC_A)}{dV}=C_{A0}\tilde{v}_0-kC_A$ 
+\end{frame}
+
+\begin{frame}\frametitle{Solution 1.4} 
+	Very important to specify initial conditions: $v(0)=v_0$ and $C_A(0)=C_A(0)$ gives $$v(V)=v_0+\tilde{v}_0V$$ $$\frac{vdC_A}{dV}+{C_A\tilde{v}_0}=C_{A0}\tilde{v}_0-kC_A$$ i.e., $(v_0+\tilde{v}_0V)\frac{dC_A}{dV}=(C_{A0}-C_A)\tilde{v}_0-kC_A$
+	
+	Assignment 1 question-Integrate to get $C_A(V)$ 
+\end{frame}
+
+\subsection{Packed-Bed Reactor} 
+\begin{frame}\frametitle{Packed-bed reactor (PBR)} 
+	\begin{itemize}
+		\item	 Analogous development, except 
+		\begin{itemize}
+			\item[a)]	we use $W$ (mass of catalyst) instead of $V$ as independent variable, and
+			\item[b)]	$r_j'$\quad$\left[\frac{\text{moles }j}{\text{(time)(mass catalyst)}}\right]$ instead of
+			
+			$r_j'$\quad$\left[\frac{\text{moles }j}{\text{(time)(volume)}}\right]$
+		\end{itemize}
+		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item	Mole balance at steady state: $$F_{j0} - F_j + \int_Wr_j'dW = 0$$ gives design equation $$\boxed{\frac{dF_j}{dW} = r_j'}$$
+	\end{itemize}
+\end{frame}
+
+\subsection{Summary} 
+\begin{frame}\frametitle{Summary}
+	
+	General mole balance equation: $$ F_{j0} - F_j + \int_Vr_j(V)dV = \frac{dN_j}{dt} $$ 
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item[a)]{Batch reactor}
+		
+		Differential form $\displaystyle\frac{dN_j}{dt} = r_jV$
+		
+		\item[b)]{CSTR} $$V = \frac{F_{j0} - F_j}{-r_j}$$ 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item[c)]{PFR}
+		
+		Differential form $\displaystyle\frac{dF_j}{dV} = r_j$
+		
+		Integral form $V_1 = \displaystyle\int_{F_{j0}}^{F_{j1}}\frac{dF_j}{r_j}$ 
+	\end{itemize}
+	Given initial and final concentrations, we expressed equations in terms of $C_A$ and solved. 
+\end{frame}
+
+\section{Industrial reactors} 
+\begin{frame}\frametitle{1.5 Industrial Reactors}
+	Read Fogler - examinable! 
+\end{frame}
+
+\end{comment}
