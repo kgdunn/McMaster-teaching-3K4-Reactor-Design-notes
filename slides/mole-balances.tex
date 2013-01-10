@@ -1,3 +1,5 @@
+\begin{comment}
+	
 \begin{frame}\frametitle{Slide credits and notes}
 	\begin{itemize}
 		\item	These slides were created by Dr. Mhaskar.
@@ -262,36 +264,100 @@
 \begin{frame}\frametitle{The general mole balance equation}
 	\begin{itemize}
 		\item	Now, let's apply to various reactor types 
-		\item	\emph{next class}
 	\end{itemize}
+\end{frame}
+\end{comment}
+
+\section{Batch}
+\begin{frame}\frametitle{Batch reactors}
+	\begin{itemize}
+		\item	No inflow or outflow.
+		\item	Charge reactors with reactants, then close up.
+		\item	What then?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Batch systems}
+	\begin{columns}[t]
+		\column{0.50\textwidth}
+			\begin{center}
+				\includegraphics[width=\textwidth]{\imagedir/batch/batch-system.png}
+			\end{center}
+			\see{From Cecilia Rodrigues' M.A.Sc thesis, 2006, McMaster University, used with permission}
+			
+		\column{0.50\textwidth}
+			\begin{center}
+				\includegraphics[width=\textwidth]{\imagedir/batch/flickr-batch-reactor-2516220152_074fbbb489_o.jpg}
+			\end{center}
+			\see{Flickr: \href{http://www.flickr.com/photos/polapix/2516220152/}{\#2516220152}}
+	\end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Batch systems}
+	Recorded values from a single batch
+	\begin{center}
+		\includegraphics[width=0.85\textwidth]{\imagedir/examples/fmc/fmc-phases-4-trajectories.png}
+	\end{center}
+	\vspace{-18pt}
+	\see{Speciality chemical manufacturer}
+\end{frame}
+
+\begin{frame}\frametitle{Batch reactors}
+	Where are they used?
+	\begin{itemize}
+		\item	small scale products (low volumes)
+		\item	usually extremely high value product: medicines, speciality chemicals
+		\item	hard-to-make products
+		\item	multiple steps in the ``recipe''
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Batch reactors}
+	\begin{itemize}
+		\item	Typically perfectly mixed, so $\displaystyle \int_V r_j(V)dV$ can be replaced by $r_j \cdot V$
+		\item	The mole balance: start with the general equation, then simplify:
+		\[
+			\begin{aligned}
+				F_{j0} - F_j + \int_V r_j(V) \,dV &= \frac{dN_j}{dt}\\
+				\\
+				\cancelto{0}{F_{j0}} - \cancelto{0}{F_j} + r_j \cdot V        &= \frac{dN_j}{dt}\\
+			\end{aligned}
+		\]
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Batch reactors}
+	$$\frac{dN_j}{dt} = r_j \cdot V$$ 
+	
+	\textbf{Note:} $V$ is \emph{not} assumed to be constant here. It could be a function of time or of the extent of reaction (and indirectly a function of time).
+	\vspace{12pt}
+	\begin{exampleblock}{So for batch reactors:}
+		$$\frac{dN_j(t)}{dt} = r_j(t) \cdot V(t)$$
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}\frametitle{Batch example problem}
+	$$A\longrightarrow2B$$
+	with $-r_A = kC_A$ and $k = 0.23\text{min}^{-1}$ in a constant volume batch reactor.
+
+	\vspace{12pt}
+	We are also given the inlet concentration and volume: 
+	$C_{A0} = 2$mol/L, $V=10$L. 
+	
+	\vspace{12pt}
+	How long does it take to reduce the concentration of $A$ in reactor to 10\% of its initial value (i.e. a 90\% conversion)? 
+	%Solution: {\bf First solve analytically} $$\frac{dN_A}{dt} = r_AV = -kC_AV$$ 
+\end{frame}
+
+\begin{frame}\frametitle{Batch example problem}
+	
+\end{frame}
+
+\begin{frame}\frametitle{Batch example problem}
+	
 \end{frame}
 
 \begin{comment}
-
-\section{Batch}
-\begin{frame}\frametitle{1.3 Batch reactors}
-	\begin{itemize}
-		\item	No inflow or outflow.
-		\item	Charge reactors with reactants then close up.
-
-		\item	Typically perfectly mixed, so $\int_V r_j(V)dV$ can be replaced by $r_jV$
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\begin{itemize}
-		\item	<1->{ The mole balance reduces to $$\frac{dN_j}{dt} = r_jV$$ }
-		\item	<1->{\textbf{Note:} $V$ is \emph{not} assumed to be constant here. It could be a function of time or of the extent of reaction (and indirectly a function of time).}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}\frametitle{Problem 1.1}
-	\begin{itemize}
-		\item	<1->{$$A\longrightarrow2B, -r_A = kC_A, k = 0.23\text{min}^{-1}$$ in a const volume batch reactor. $C_{A0} = 2$mol/L, $V=10$L. How long does it take to reduce the conc of $A$ in reactor to 0.2 mol/L? }
-		\item	<1->{\textcolor{blue}{Solution: {\bf First solve analytically}} $$\frac{dN_A}{dt} = r_AV = -kC_AV$$ }
-	\end{itemize}
-\end{frame}
-
 \begin{frame}\frametitle{Solution 1.1}
 	For const V,
 	\begin{align*}
@@ -312,7 +378,9 @@
 		&= 10\text{min}
 	\end{align*}
 \end{frame}
+\end{comment}
 
+\begin{comment}
 \begin{frame}\frametitle{Problem 1.2}
 	In a well mixed reactor, starting with a reactant A at concentration $C_{A0}$ and volume $V$, a reaction with the rate expression $r_a=-kC_A$ takes place. However, every $\Delta t$, a volume $V_0$ is removed first and fresh volume of $V_0$ (at concentration $C_{A0}$) is inserted into the reactor. Determine the steady state profile for the system (meaning the profile of $C_A(t)$ repeats every $\Delta t$)?
 \end{frame}
@@ -336,60 +404,20 @@
 \begin{frame}
 	This gives $$C_A^*=\frac{C_{A0}v_0\Delta t}{V(1-e^{{-k\Delta t}})+v_0\Delta te^{{-k\Delta t}}}$$ Now taking the limit $\Delta t \rightarrow 0$, results in (L'Hospital's rule) $$C_A^*=\frac{C_{A0}v_0}{V(k)+v_0(1)}=\frac{C_{A0}}{1+k\tau}$$ Is this result expected? (In assignment 1, repeat this analysis, but `add' the fresh volume first and then remove the volume from the reactor)
 \end{frame}
+\end{comment}
 
 \section{Continuous-flow}
 \subsection{CSTR}
+
+\begin{comment}
 \begin{frame}\frametitle{\normalsize 1.4 Continuous-Flow Reactors\\1.4.1 Continuous Tank Reactors (CTR) }
 	\begin{columns}
-		\begin{column}
-			{0.6
-			\textwidth} \vspace{-15mm}
-			\begin{figure}
-				\rotatebox{90}{
-				\includegraphics[width=1.7in, height=2.7 in]{\imagedir/reactors/mhaskar/ch1/CSTR_unmixed_rotated.pdf}}\caption{A reactor schematic}
-			\end{figure}
+		\begin{column}{0.6\textwidth} 
+			\vspace{-15mm}
+			\includegraphics[width=1.7in, height=2.7 in]{\imagedir/reactors/mhaskar/ch1/CSTR_unmixed_rotated.pdf}
 		\end{column}
 		\hspace{-15mm}
-		\begin{column}
-			{0.6
-			\textwidth}
-			\begin{itemize}
-				\vspace{-3mm}
-				\item	At any given time, t,
-				\item	$F$: Molar flow rate
-				\item	$C$: Concentration
-				\item	subscript $j$, jth species
-				\item	subscript $0$, inlet stream
-				\item	subscript $r$, reactor
-			\end{itemize}
-		\end{column}
-	\end{columns}
-	$C_{jr}$: Concentration of species j in the reactor
-\end{frame}
-
-\begin{frame}
-	\begin{itemize}
-
-		\item	Typically well mixed: System properties constant throughout reactor.
-
-		$\Rightarrow$ product concentrations, temperatures, \emph{etc} same as that within tank.
-	\end{itemize}
-\end{frame}
-
-\begin{frame}\frametitle{\normalsize 1.4 Continuous-Flow Reactors\\1.4.1 Continuous-Stirred Tank Reactors (CSTR) }
-	\begin{columns}
-		\begin{column}
-			{0.6
-			\textwidth} \vspace{-22mm}
-			\begin{figure}
-				\rotatebox{90}{
-				\includegraphics[width=1.7in, height=2.7 in]{\imagedir/reactors/mhaskar/ch1/CSTR_rotated.pdf}}\caption{A CSTR schematic}
-			\end{figure}
-		\end{column}
-		\hspace{-15mm}
-		\begin{column}
-			{0.6
-			\textwidth}
+		\begin{column}{0.6\textwidth}
 			\begin{itemize}
 				\vspace{-3mm}
 				\item	At any given time, $t$
@@ -401,28 +429,89 @@
 			\end{itemize}
 		\end{column}
 	\end{columns}
-	$C_{j}$: Concentration of species $j$ in the reactor
+	$C_{jr}$: Concentration of species j in the reactor
 \end{frame}
+\end{comment}
 
-\begin{frame}
+\begin{frame}\frametitle{Continuous-Stirred Tank Reactor}
 	\begin{itemize}
-		\item	<1->{General Mole balance equation: $$F_{j0} - F_j + \int_V r_j (V) dV = \frac{dN_j}{dt}$$ }
-		\item	<1->{ $\frac{dN_j}{dt} = 0$, (often analyzed at steady state, {\bf but not necessarily)}. }
-		\item	<1->{ No spatial variation with reactors $$\Rightarrow \int_V r_j(V)dV = r_jV\Rightarrow \boxed{V = \frac{F_{j0} - F_j}{-r_j}}$$ }
+		\item	CSTR's: are assumed to be well mixed
+		\item	System properties constant throughout reactor.
+		\item	This implies the product concentrations, temperatures, and other \textbf{intensive} properties \emph{leaving the tank} are the same as that \emph{within} tank.		
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}\frametitle{Continuous-Stirred Tank Reactor (CSTR)}
+	\begin{center}
+		\includegraphics[height=0.95\textheight]{\imagedir/reactors/examples/flickr-6240399099_97069db83c_o.jpg}
+	\end{center}
+	\vspace{-60pt}
+	\see{Flickr \href{http://www.flickr.com/photos/acwa/6240399099}{\#6240399099}}
+\end{frame}
+
+\begin{frame}\frametitle{Continuous-Stirred Tank Reactor}
+	\begin{itemize}
+		
+		\item	Where are CSTRs used? When we want entire system to be operated
+		\begin{itemize}
+			\item	at the same concentration
+			\item	at the same temperature
+		\end{itemize}
+		\item	where we require good agitation to contact the reactants
+		\item	e.g. emulsion polymerization
+		\item	a catalyst is suspended in a liquid product
+		\item	leaching gold from crush ore (rock); crushed particles $\sim 50 \mu m$ with gold particles exposed
+		\item	Leaching: $4\text{Au} + 8\text{NaCN} + \text{O}_2 + 2 \text{H}_2\text{O} \longrightarrow  4 \text{Na[Au(CN)}_2\text{]} + 4 \text{NaOH}$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Continuous-Stirred Tank Reactor (CSTR)}
+	\begin{columns}[c]
+		\column{0.60\textwidth}
+			\includegraphics[width=\textwidth]{\imagedir/reactors/mhaskar/ch1/CSTR_rotated.pdf}
+		\column{0.60\textwidth}
+			\begin{itemize}
+				\vspace{-3mm}
+				\item	At any given time, $t$
+				\item	$F$: molar flow rate
+				\item	$C$: concentration
+				\item	$v$: volumetric flow
+				\item	subscript $j$, $j^\text{th}$ species
+				\item	subscript $0$, inlet stream
+				%\item	subscript $r$, reactor
+			\end{itemize}
+	\end{columns}
+	\vspace{24pt}
+	$C_{j}$: Concentration of species $j$ in the reactor of liquid volume $V$
+	\vspace{12pt}
+	\begin{itemize}
+		\item	$V$ is \textbf{not} the total physical reactor volume
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Continuous-Stirred Tank Reactor (CSTR)}
+	\begin{itemize}
+		\item	General mole balance equation: $$F_{j0} - F_j + \int_V r_j (V) dV = \frac{dN_j}{dt}$$
+		\vspace{12pt} 
+		\item	$\dfrac{dN_j}{dt} = 0$, (often analyzed at steady state, {\bf but not necessarily)}. 
+		\vspace{12pt}
+		\item	No spatial variation with reactors $$\Rightarrow \int_V r_j(V)dV = r_jV\Rightarrow \boxed{V = \frac{F_{j0} - F_j}{-r_j}}$$ 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Continuous-Stirred Tank Reactor (CSTR)}
 	\begin{itemize}
 		\item	Note: Can relate to concentration via
 		\begin{align*}
 			F_j &= C_jv\\
 			\frac{\text{moles}}{\text{time}} &= \frac{\text{moles}}{\text{vol}}\cdot\frac{\text{vol}}{\text{time}}
 		\end{align*}
-		$$V = \frac{v_0C_{A0} - vC_A}{-r_A} \eqno{\text{(1-9)}}$$ Assignment 1 question: Rewrite the mole balance without assuming steady state.
+		$$V = \frac{v_0C_{A0} - vC_A}{-r_A} \eqno{\text{(1-9)}}$$ 
+		%Assignment 1 question: Rewrite the mole balance without assuming steady state.
 	\end{itemize}
 \end{frame}
 
+\begin{comment}
 \subsection{Tubular reactors}
 \begin{frame}\frametitle{Tubular reactors}
 	\vspace{-0.5em}
@@ -433,11 +522,11 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}\frametitle{Tubular reactors}
 	Rearranging and dividing by $\Delta V$, $$\left[\frac{F_j|_{V+\Delta V} - F_j|_V}{\Delta V}\right] = r_j$$ Taking limit as $\Delta V \rightarrow 0$ $$\boxed{\frac{dF_j}{dV} = r_j}$$ Integral form: $$V_1 = \int_0^{V_1}dV = \int_{F_{j0}}^{F_{j1}}\frac{dF_j}{r_j}$$
 \end{frame}
 
-\begin{frame}
+\begin{frame}\frametitle{Tubular reactors}
 	\textbf{Remark 1}: Analysis does not assume constant cross-sectional area.
 
 	$\Rightarrow$ applicable also to other geometries
@@ -499,7 +588,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}\frametitle{Packed-bed reactor (PBR)}
 	\begin{itemize}
 		\item	Mole balance at steady state: $$F_{j0} - F_j + \int_Wr_j'dW = 0$$ gives design equation $$\boxed{\frac{dF_j}{dW} = r_j'}$$
 	\end{itemize}
@@ -536,5 +625,4 @@
 \begin{frame}\frametitle{1.5 Industrial Reactors}
 	Read Fogler - examinable!
 \end{frame}
-
 \end{comment}
