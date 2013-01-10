@@ -25,6 +25,9 @@ pstopdf #1 -o \OutputFile}
 
 \usepackage{etoolbox}  % For selective compiling: figure sources might be on different machines
 
+\providetoggle{internal}
+\settoggle{internal}{true}      % set "true" when the PDF is for internal use; use "false" when publishing it publically, on-line
+
 \providetoggle{instructor}
 \providetoggle{student}
 
