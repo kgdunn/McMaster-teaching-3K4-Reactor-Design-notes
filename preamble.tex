@@ -1,7 +1,3 @@
-\usepackage{epstopdf}
-\epstopdfDeclareGraphicsRule{.eps}{pdf}{.pdf}{%
-pstopdf #1 -o \OutputFile}
-
 \usepackage[latin1]{inputenc}  % allows direct input of Unicode characters
 % %\usepackage[utf8x]{inputenc}   % allows direct input of Unicode characters
 
@@ -26,7 +22,7 @@ pstopdf #1 -o \OutputFile}
 \usepackage{etoolbox}  % For selective compiling: figure sources might be on different machines
 
 \providetoggle{internal}
-\settoggle{internal}{true}      % set "true" when the PDF is for internal use; use "false" when publishing it publically, on-line
+\settoggle{internal}{false}      % set "true" when the PDF is for internal use; use "false" when publishing it publically, on-line
 
 \providetoggle{instructor}
 \providetoggle{student}
