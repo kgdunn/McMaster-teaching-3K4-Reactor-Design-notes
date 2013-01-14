@@ -475,6 +475,7 @@
 	\end{itemize}
 \end{frame}
 
+% 14 January 2013
 \begin{frame}\frametitle{Continuous-Stirred Tank Reactor (CSTR)}
 	\begin{columns}[c]
 		\column{0.55\textwidth}
@@ -510,19 +511,49 @@
 \end{frame}
 
 \begin{frame}\frametitle{Continuous-Stirred Tank Reactor (CSTR)}
-	\begin{itemize}
-		\item	Note: Can relate to concentration via
-		\begin{align*}
-			F_j &= C_jv\\
-			\frac{\text{moles}}{\text{time}} &= \frac{\text{moles}}{\text{vol}}\cdot\frac{\text{vol}}{\text{time}}
-		\end{align*}
-		$$V = \frac{v_0C_{A0} - vC_A}{-r_A} \eqno{\text{(1-9)}}$$ 
-		%Assignment 1 question: Rewrite the mole balance without assuming steady state.
-	\end{itemize}
+	We can relate to concentration via
+	\vspace{12pt}
+	\begin{columns}[t]
+		\column{0.50\textwidth}
+			\textbf{Awkward Fogler notation}
+			\begin{align*}
+				F_j &= C_jv\\
+				\frac{\text{moles}}{\text{time}} &= \frac{\text{moles}}{\text{vol}}\cdot\frac{\text{volume}}{\text{time}}
+			\end{align*}
+			$$V = \frac{v_0C_{A0} - vC_A}{-r_A} \eqno{\text{(1-9)}}$$
+		\column{0.50\textwidth}
+			\textbf{Improved (?)\\ notation}
+			\begin{align*}
+				F_j &= C_jq\\
+				\frac{\text{moles}}{\text{time}} &= \frac{\text{moles}}{\text{vol}}\cdot\frac{\text{volume}}{\text{time}}
+			\end{align*}
+			$$V = \frac{q_0C_{A0} - qC_A}{-r_A} $$
+	\end{columns}
+	%Assignment 1 question: Rewrite the mole balance without assuming steady state.
+\end{frame}
+
+
+\subsection{Tubular reactors}
+
+\begin{frame}\frametitle{Tubular reactors}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/PFR/tubular-reactor-Fogler-1.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Tubular reactors}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/PFR/tubular-reactor-Fogler-2.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Tubular reactors}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/PFR/tubular-reactor-Fogler-3.png}
+	\end{center}
 \end{frame}
 
 \begin{comment}
-\subsection{Tubular reactors}
 \begin{frame}\frametitle{Tubular reactors}
 	\vspace{-0.5em}
 	\begin{itemize}
@@ -558,13 +589,13 @@
 	Express design equation in terms of concentration: $$\frac{dF_A}{dV} = \frac{d(C_Av)}{dV} = v\frac{dC_A}{dA}$$ $$\therefore v\frac{dC_A}{dV} = r_A = -kC_A$$
 \end{frame}
 
-\begin{frame}
+\begin{frame}\frametitle{Solution 1.3}
 	\begin{align*}
 		&\Rightarrow -\frac{v}{k}\int_{C_{A0}}^{C_A}\frac{dC_A}{C_A} = \int_0^VdV\\
 		&\Rightarrow -\frac{v}{k}[\ln C_A - \ln C_{A0}] = V\\
 		&\Rightarrow V = \frac{v}{k}\ln\frac{C_{A0}}{C_A} = 100\text{L}
 	\end{align*}
-	Note: Plug in the numbers at the very last step.
+	Note: Plug in the numbers at the very last step
 \end{frame}
 
 \begin{frame}\frametitle{Problem 1.4}
