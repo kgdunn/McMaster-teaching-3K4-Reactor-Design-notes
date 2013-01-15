@@ -553,8 +553,7 @@
 	\end{center}
 \end{frame}
 
-\begin{comment}
-\begin{frame}\frametitle{Tubular reactors}
+\begin{frame}\frametitle{Tubular reactors (covered on the board in class)}
 	\vspace{-0.5em}
 	\begin{itemize}
 		\item	Assume turbulent flow $\Rightarrow$ modelled as plug (no radial variation in concentration)
@@ -563,11 +562,11 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{Tubular reactors}
+\begin{frame}\frametitle{Tubular reactors (covered on the board in class)}
 	Rearranging and dividing by $\Delta V$, $$\left[\frac{F_j|_{V+\Delta V} - F_j|_V}{\Delta V}\right] = r_j$$ Taking limit as $\Delta V \rightarrow 0$ $$\boxed{\frac{dF_j}{dV} = r_j}$$ Integral form: $$V_1 = \int_0^{V_1}dV = \int_{F_{j0}}^{F_{j1}}\frac{dF_j}{r_j}$$
 \end{frame}
 
-\begin{frame}\frametitle{Tubular reactors}
+\begin{frame}\frametitle{Tubular reactors (covered on the board in class)}
 	\textbf{Remark 1}: Analysis does not assume constant cross-sectional area.
 
 	$\Rightarrow$ applicable also to other geometries
@@ -577,71 +576,100 @@
 	\textbf{Remark 2}: Furthermore, for liquids (why not for gases?) at steady state the volumetric flow rate is equal throughout the reactor, i.e., $v_o=v$
 \end{frame}
 
-\begin{frame}\frametitle{Problem 1.3}
-
-	$$A\longrightarrow B\text{ in tubular reactors.}$$ Constant volumetric rate $v = 10$L/min. Reaction follows first-order kinetics with rate const $k = 0.23$min$^{-1}$. Determine the volume required to reduce conc. to $10\%$ of entering value?
+\begin{frame}\frametitle{PFR example}
+	$A\longrightarrow B$ in a tubular reactor. Feed enters at constant volumetric rate $q = 10\,\text{L.min}^{-1}$. The reaction follows first-order kinetics with rate const $k = 0.23\,\text{min}^{-1}$. 
+	\vspace{12pt}
+	\begin{enumerate}
+		\item	Determine the volume required to reduce the exiting concentration to $10\%$ of the entering value, i.e. $C_A = 0.1 C_{A0}$?
+		\item	As above, but for 99\% conversion, i.e. $C_A = 0.01 C_{A0}$?
+		\item	What happens to the conversion if we halve the volumetric flow rate $q_\text{new} \leftarrow q_\text{previous}$. Intuitively, what do we expect?
+	\end{enumerate}
 \end{frame}
 
-\begin{frame}\frametitle{Solution 1.3}
+\begin{frame}\frametitle{PFR example}
 	\begin{align*}
-		\frac{dF_A}{dV} &= -kC_A
+		\frac{dF_A}{dV} &= r_A = -kC_A
 	\end{align*}
-	Express design equation in terms of concentration: $$\frac{dF_A}{dV} = \frac{d(C_Av)}{dV} = v\frac{dC_A}{dA}$$ $$\therefore v\frac{dC_A}{dV} = r_A = -kC_A$$
+	Express design equation in terms of concentration: 
+	$$\frac{dF_A}{dV} = \frac{d(C_Aq)}{dV} = q\frac{dC_A}{dA}$$ 
+	$$\therefore q\frac{dC_A}{dV} = r_A = -kC_A$$
 \end{frame}
 
-\begin{frame}\frametitle{Solution 1.3}
+\begin{frame}\frametitle{PFR example}
 	\begin{align*}
-		&\Rightarrow -\frac{v}{k}\int_{C_{A0}}^{C_A}\frac{dC_A}{C_A} = \int_0^VdV\\
-		&\Rightarrow -\frac{v}{k}[\ln C_A - \ln C_{A0}] = V\\
-		&\Rightarrow V = \frac{v}{k}\ln\frac{C_{A0}}{C_A} = 100\text{L}
+		&\Rightarrow -\frac{q}{k}\int_{C_{A0}}^{C_A}\frac{dC_A}{C_A} = \int_0^VdV\\
+		&\Rightarrow -\frac{q}{k}\ln\left(\frac{C_A}{C_{A0}} \right) = V\\
+		&\Rightarrow V = -\frac{10}{0.23}\ln\left(\frac{0.1C_{A0}}{C_{A0}} \right) = -\frac{10}{0.23}(-2.3) = 100\,\text{L}
 	\end{align*}
 	Note: Plug in the numbers at the very last step
+	\begin{enumerate}
+		\setcounter{enumi}{1}
+		\item	For 99\% conversion: 200L
+		\item	For half input flow: 99\% conversion {\color{myGreen}{\small (increased!)}}
+	\end{enumerate}
+	\vspace{4pt}
+	\hrule
+	\vspace{4pt}
+	\scriptsize See F2006 example 1.1 or F2011 example 1.2 for similar problem
 \end{frame}
 
-\begin{frame}\frametitle{Problem 1.4}
-
-	Consider a PFR (total volume $V_{PFR}$) with an inlet volumetric flow rate $v_0$ and concentration of A at $C_{A0}$, and an additional volumetric flow rate per Volume (along the length of the reactor) of $\tilde{v}_0$ at a concentration of A at $C_{A0}$. An elementary reaction with reaction rate $r_A=-kC_A$ takes place in the reactor. Determine the outlet concentration of A assuming constant density.
-\end{frame}
-
-\begin{frame}\frametitle{Solution 1.4}
-
-	A mass balance on the differential volume yields: $$v\rho|_V - v\rho|_{V + \Delta V} + \rho\tilde{v}_0\Delta V = 0$$ i.e., $\frac{dv}{dV}=\tilde{v}_0$\\
-	A mole balance on the differential volume yields: $$vC_A|_V - vC_A|_{V + \Delta V} + C_{A0}\tilde{v}_0\Delta V -k C_A\Delta V= 0$$ i.e., $\frac{d(vC_A)}{dV}=C_{A0}\tilde{v}_0-kC_A$
-\end{frame}
-
-\begin{frame}\frametitle{Solution 1.4}
-	Very important to specify initial conditions: $v(0)=v_0$ and $C_A(0)=C_A(0)$ gives $$v(V)=v_0+\tilde{v}_0V$$ $$\frac{vdC_A}{dV}+{C_A\tilde{v}_0}=C_{A0}\tilde{v}_0-kC_A$$ i.e., $(v_0+\tilde{v}_0V)\frac{dC_A}{dV}=(C_{A0}-C_A)\tilde{v}_0-kC_A$
-
-	Assignment 1 question-Integrate to get $C_A(V)$
-\end{frame}
+% \begin{frame}\frametitle{Problem 1.4}
+% 	Consider a PFR (total volume $V_{PFR}$) with an inlet volumetric flow rate $v_0$ and concentration of A at $C_{A0}$, and an additional volumetric flow rate per Volume (along the length of the reactor) of $\tilde{v}_0$ at a concentration of A at $C_{A0}$. An elementary reaction with reaction rate $r_A=-kC_A$ takes place in the reactor. Determine the outlet concentration of A assuming constant density.
+% \end{frame}
+% 
+% \begin{frame}\frametitle{Solution 1.4}
+% 	A mass balance on the differential volume yields: $$v\rho|_V - v\rho|_{V + \Delta V} + \rho\tilde{v}_0\Delta V = 0$$ i.e., $\frac{dv}{dV}=\tilde{v}_0$\\
+% 	A mole balance on the differential volume yields: $$vC_A|_V - vC_A|_{V + \Delta V} + C_{A0}\tilde{v}_0\Delta V -k C_A\Delta V= 0$$ i.e., $\frac{d(vC_A)}{dV}=C_{A0}\tilde{v}_0-kC_A$
+% \end{frame}
+% 
+% \begin{frame}\frametitle{Solution 1.4}
+% 	Very important to specify initial conditions: $v(0)=v_0$ and $C_A(0)=C_A(0)$ gives $$v(V)=v_0+\tilde{v}_0V$$ $$\frac{vdC_A}{dV}+{C_A\tilde{v}_0}=C_{A0}\tilde{v}_0-kC_A$$ i.e., $(v_0+\tilde{v}_0V)\frac{dC_A}{dV}=(C_{A0}-C_A)\tilde{v}_0-kC_A$
+% 
+% 	Assignment 1 question-Integrate to get $C_A(V)$
+% \end{frame}
 
 \subsection{Packed-Bed Reactor}
 \begin{frame}\frametitle{Packed-bed reactor (PBR)}
+	Analogous development, except
 	\begin{itemize}
-		\item	 Analogous development, except
-		\begin{itemize}
-			\item[a)]	we use $W$ (mass of catalyst) instead of $V$ as independent variable, and
-			\item[b)]	$r_j'$\quad$\left[\frac{\text{moles }j}{\text{(time)(mass catalyst)}}\right]$ instead of
+		\item	we use $W$ (mass of catalyst) instead of $V$ as independent variable, and
+		\item	$r_j' = \left[\frac{\text{moles }j}{\text{(time)(mass catalyst)}}\right]$ instead of
 
-			$r_j'$\quad$\left[\frac{\text{moles }j}{\text{(time)(volume)}}\right]$
-		\end{itemize}
-
+		$r_j =\left[\frac{\text{moles }j}{\text{(time)(volume)}}\right]$
 	\end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{Packed-bed reactor (PBR)}
-	\begin{itemize}
-		\item	Mole balance at steady state: $$F_{j0} - F_j + \int_Wr_j'dW = 0$$ gives design equation $$\boxed{\frac{dF_j}{dW} = r_j'}$$
-	\end{itemize}
+\begin{frame}\frametitle{Comparison}
+	\begin{columns}[t]
+		\column{0.50\textwidth}
+			\textbf{Plug flow reactor}
+			\begin{itemize}
+				\item	PFR
+				\item	Mole balance at steady state: $$F_{j0} - F_j + \int_Vr_j'dV = 0$$ 
+				\item	Differentiate:
+
+				$$\boxed{\frac{dF_j}{dV} = r_j}$$
+			\end{itemize}
+		\column{0.50\textwidth}
+			\textbf{Packed bed reactor}
+			\begin{itemize}
+				\item	PBR
+				\item	Mole balance at steady state: $$F_{j0} - F_j + \int_Wr_j'dW = 0$$
+				\item	Differentiate:
+
+				$$\boxed{\frac{dF_j}{dW} = r_j'}$$
+			\end{itemize}
+	\end{columns}
+	
+	
 \end{frame}
 
 \subsection{Summary}
 \begin{frame}\frametitle{Summary}
-
 	General mole balance equation: $$ F_{j0} - F_j + \int_Vr_j(V)dV = \frac{dN_j}{dt} $$
 \end{frame}
 
-\begin{frame}
+\begin{frame}\frametitle{Summary}
 	\begin{itemize}
 		\item[a)]{Batch reactor}
 
@@ -651,7 +679,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}\frametitle{Summary}
 	\begin{itemize}
 		\item[c)]{PFR}
 
@@ -662,8 +690,7 @@
 	Given initial and final concentrations, we expressed equations in terms of $C_A$ and solved.
 \end{frame}
 
-\section{Industrial reactors}
-\begin{frame}\frametitle{1.5 Industrial Reactors}
-	Read Fogler - examinable!
-\end{frame}
-\end{comment}
+% \section{Industrial reactors}
+% \begin{frame}\frametitle{1.5 Industrial Reactors}
+% 	Read Fogler - examinable!
+% \end{frame}
