@@ -7,139 +7,182 @@
 \end{frame}
 
 \begin{frame}\frametitle{Conversion}
-	\begin{itemize}
-		\item	Consider $$aA + bB \longrightarrow cD + dD$$
+	Consider $$aA + bB \longrightarrow cD + dD$$
 
-		Consider species $A$ to be the limiting reactant (i.e. the one which gets consumed first). Useful to express extent of reaction in terms of \textit{\color{blue}conversion} of $A$: $$X_A = \frac{\text{moles }A\text{ reacted}}{\text{moles } A\text{ fed}}$$ To simplify notation, use $X$ (without subscript).
-	\end{itemize}
+	Consider species $A$ to be the \textbf{basis} (usually we pick the one which gets consumed to completion first, i.e. the limiting reagent). 
+	
+	\vspace{12pt}
+	
+	Useful to express {\color{purple}{extent of reaction}} in terms of {\color{purple}{\emph{conversion}}} of $A$: 
+	
+	$$X_A = \frac{\text{moles }A\text{ reacted}}{\text{moles } A\text{ fed}}$$ 
+	
+	\vspace{12pt}
+	{\small To simplify notation, use $X$ (without subscript).}
 \end{frame}
 
 \begin{frame}\frametitle{Conversion}
 	\textbf{Remarks}
 	\begin{itemize}
-		\item	In a batch reactor, $X$ is a function of time
+		\item	In a batch reactor, $X$ is a \emph{function of time}
 		\begin{itemize}
 			\item	For irreversible reaction, $X\rightarrow1$ as $t\rightarrow\infty$
 			\item	For reversible reaction, $X\rightarrow X_e$ (equilibrium conversion) as $t\rightarrow\infty$
 		\end{itemize}
-		\item	In flow reactors (CSTR and PFR) $X$ is a function of reactor volume (reflects the amount of time reactants spend in the reactor)
+		\vspace{12pt}
+		\item	In flow reactors (CSTR and PFR) the $X$ is a \emph{function of volume}, which reflects the amount of time reactants spend in the reactor
 	\end{itemize}
 \end{frame}
 
-\section{Batch}
-\begin{frame}\frametitle{Design Equations in Terms of Conversion\\{1. \color{blue}Batch}}
+\begin{frame}\frametitle{Design equations in terms of conversion}
+	In this section we consider rewriting the previously derived equations from Chapter 1 (called the design equations) in terms of conversion.
+	
+	We had previously used concentration $C_A$ and molar flow $F_A$. Now we will use {\color{purple}{$X$, conversion}}.
+	
+	\vspace{12pt}
+	We consider our 4 reactors {\small (numbers refer to Fogler)}:
+	\vspace{6pt}
+	\begin{enumerate}
+		\item[2.2]	Batch
+		\item[2.3.1]	CSTR
+		\item[2.3.2]	PFR
+		\item[2.3.3]	PBR
+	\end{enumerate}
+\end{frame}
+
+%\section{Batch}
+\begin{frame}\frametitle{Batch systems}
+	\vspace{12pt}
+	First express $N_A$ in terms of $X$
+	
+	\begin{align*}
+		\left(\begin{array}{c}
+			\text{moles } A \\
+			\text{reacted}
+		\end{array}\right)
+		&=
+		\left(\begin{array}{c}
+			\text{moles }A\\
+			\text{fed}
+		\end{array}\right)
+		\cdot
+		\left(\frac{\text{moles }A\text{ reacted}}{\text{moles }A\text{ fed}}\right)\\
+		&= N_{A0} \cdot X\\
+	\end{align*}
+	\begin{align*}
+		\left(\begin{array}{c}
+			\text{moles }A\text{ at}\\
+			\text{time }t
+		\end{array}\right)
+		&=
+		\left(\begin{array}{c}
+			\text{initial}\\
+			\text{moles }A
+		\end{array}\right)
+		-
+		\left(\begin{array}{c}
+			\text{moles }A\\
+			\text{consumed}
+		\end{array}\right)
+		\\
+		N_A &= N_{A0} - N_{A0}\cdot X \\
+		N_A &= N_{A0}(1 - X)
+	\end{align*}
+\end{frame}
+
+\begin{frame}\frametitle{Batch systems}
 	\begin{itemize}
-		\item	First express $N_A$ in terms of $X$
+		\item	Recall the mole balance equation (assumptions?):
 		\begin{align*}
-			\begin{array}{c}
-				\text{moles } A \\
-				\text{reacted}
-			\end{array}
-			&=
-			\begin{array}{c}
-				\text{moles }A\\
-				\text{fed}
-			\end{array}
-			\cdot\frac{\text{moles }A\text{ reacted}}{\text{moles }A\text{ fed}}\\
-			&= N_{A0}\cdot X\\
-			\begin{array}{c}
-				\text{moles }A\text{ at}\\
-				\text{time }t
-			\end{array}
-			&=
-			\begin{array}{c}
-				\text{initial}\\
-				\text{moles }A
-			\end{array}
-			-
-			\begin{array}{c}
-				\text{moles }A\\
-				\text{teacted}
-			\end{array}
-			\\
-			N_A &= N_{A0} - N_{A0}\cdot X \\
-			&= N_{A0}(1 - X)
+			\frac{dN_A}{dt} &= r_AV\\
+			-N_{A0}\frac{dX}{dt} &= r_AV\\
+			N_{A0}\frac{dX}{dt} &= -r_AV
 		\end{align*}
+		\item	Integral form: $$\int_0^tdt = t = N_{A0}\int_0^X\frac{dX}{-r_AV}$$
 	\end{itemize}
+	{\color{myOrange}{Design feature for batch systems: \emph{time}}}
 \end{frame}
 
-\begin{frame}
+%\section{Flow Systems}
+\begin{frame}\frametitle{Flow systems: CSTRs, PFRs and PBRs}
+	\begin{align*}
+		F_{A0}X &= \left(\frac{\text{moles }A\text{ fed}}{\text{time}}\right)\cdot\left(\frac{\text{moles }A\text{ reacted}}{\text{moles }A\text{ fed}}\right)\\
+		F_{A0}X &= \frac{\text{moles }A\text{ reacted}}{\text{time}}
+	\end{align*}
+	\vspace{-12pt}
+	\begin{columns}[t]
+		\column{1.00\textwidth}
+			\begin{align*}
+				\quad\left(\begin{array}{c}
+					\text{molar rate of}\\A\text{ leaving}
+				\end{array}\right)
+				&=
+				\left(\begin{array}{c}
+					\text{molar rate}\\\text{of }A\text{ fed}
+				\end{array}\right)
+				-
+				\left(\begin{array}{c}
+					\text{molar rate of}\\A\text{ consumed}
+				\end{array}\right)
+				\\
+				F_A &= F_{A0} - F_{A0}X\\
+				F_A &= F_{A0}(1 - X)
+			\end{align*}
+		\column{0.10\textwidth}
+	\end{columns}
+\end{frame}
+
+%\subsection{CSTR}
+\begin{frame}\frametitle{CSTR}
 	\begin{itemize}
-		\item	Recall mole bal. eqn:
-		\begin{align*}
-			&\frac{dN_A}{dt} = r_AV\\
-			\Rightarrow&-N_{A0}\frac{dX}{dt} = r_AV\\
-			\Rightarrow&{\color{red}\boxed{\color{black}N_{A0}\frac{dX}{dt} = -r_AV}}\\
-		\end{align*}
-		\item	Integral form: $${\color{red}\boxed{\color{black}\int_0^tdt = t = N_{A0}\int_0^X\frac{dX}{-r_AV}}}$$
+		\item	Recall the mole balance equation (what were the assumptions?):
+				\begin{align*}
+					V &= \frac{F_{A0} - F_A}{-r_A}\\
+					V &= \frac{F_{A0} - F_{A0}(1 - X)}{-r_A} \\
+					V &= \frac{F_{A0}X}{-r_A}
+				\end{align*}
+		\item	$r_A$: taken inside the reactor = exit conditions
 	\end{itemize}
+	{\color{myOrange}{Design feature for CSTR systems: \emph{volume}}}
 \end{frame}
 
-\section{Flow Systems}
-\begin{frame}\frametitle{2. \color{blue}Flow Systems}
-	\begin{itemize}
-		\item	Note:
-		\begin{align*}
-			F_{A0}X &= \frac{\text{moles }A\text{ fed}}{time}\cdot\frac{\text{moles }A\text{ reacted}}{\text{moles }A\text{ fed}}\\
-			&= \frac{\text{moles }A\text{ reacted}}{\text{time}}
-		\end{align*}
-		\begin{align*}
-			\begin{array}{c}
-				\text{molar rate of}\\A\text{ leaving}
-			\end{array}
-			&=
-			\begin{array}{c}
-				\text{molar rate}\\\text{of }A\text{ fed}
-			\end{array}
-			-
-			\begin{array}{c}
-				\text{molar rate of}\\A\text{ consumed}
-			\end{array}
-			\\
-			F_A &= F_{A0} - F_{A0}X\\
-			&= F_{A0}(1 - X)
-		\end{align*}
-	\end{itemize}
+%\subsection{PFR}
+\begin{frame}\frametitle{PFR}
+	Recall the mole balance equation (what were the assumptions?):
+	$$\frac{dF_A}{dV} = r_A$$
+
+	But $F_A = F_{A0}(1 - X)$
+	\begin{align*}
+		-F_{A0}\frac{dX}{dV} &= r_a\\
+		F_{A0}\frac{dX}{dV}&=-r_A
+	\end{align*}
+
+	Integral form:
+	\vspace{-6pt}
+	$$\int_0^VdV = V = F_{A0}\int_0^X\frac{dX}{-r_A}$$
+	{\color{myOrange}{Design feature for PFR systems: \emph{volume}}}
 \end{frame}
 
-\subsection{CSTR}
-\begin{frame}\frametitle{2.1 \color{blue}CSTR}
-	\begin{itemize}
-		\item	Recall mole balance equation:
-		\begin{align*}
-			V &= \frac{F_{A0} - F_A}{-r_A}\\
-			&= \frac{F_{A0} - F_{A0}(1 - X)}{-r_A}
-		\end{align*}
-		\item	$$\color{red}\boxed{\color{black}V = \frac{F_{A0}X}{-r_A}}$$
-		\item	$r_A$: \color{orange}at reactor conditions = exit conditions
-	\end{itemize}
+%\subsection{PBR}
+\begin{frame}\frametitle{PBR}
+	Follows a similar derivation:
+	
+	$$F_{A0} \frac{dX}{dW} = -r_A'$$ 
+	
+	Integral form: 
+	
+	$$W = F_{A0}\int_0^X\frac{dX}{-r_A'}$$
+	
+	\vspace{24pt}
+	{\color{myOrange}{Design feature for PBR systems: \emph{catalyst weight}}}
 \end{frame}
 
-\subsection{PFR}
-\begin{frame}\frametitle{2.2 \color{blue}PFR} \vspace{-0.4em}
-	\begin{itemize}
-		\item	\small Recall mole bal. eqn: $$\frac{dF_A}{dV} = r_A$$
-
-		But
-		\begin{align*}
-			&F_A = F_{A0}(1 - X)\\
-			\Rightarrow&-F_{A0}\frac{dX}{dV} = r_a\\
-			\Rightarrow&{\color{red}\boxed{\color{black}F_{A0}\frac{dX}{dV}=-r_A}}
-		\end{align*}
-
-		Integral form:
-
-		$${\color{red}\boxed{\color{black}\int_0^VdV = V = F_{A0}\int_0^X\frac{dX}{-r_A}}}$$
-	\end{itemize}
+\begin{frame}\frametitle{Example}
+	Interactive / on the board
 \end{frame}
-
-\subsection{PBR}
-\begin{frame}\frametitle{2.3 \color{blue}PBR}
-	\begin{itemize}
-		\item	Similarly, $${\color{red}\boxed{\color{black}F_{A0} \frac{dX}{dW} = -r_A'}}$$ Integral form: $${\color{red}\boxed{\color{black}W = F_{A0}\int_0^X\frac{dX}{-r_A'}}}$$
-	\end{itemize}
-\end{frame}
-\begin{frame}
+% PFR example: not done
+\begin{comment}
+\begin{frame}\frametitle{PFR example}
 	\begin{itemize}
 		\item	{\color{blue}Ex 2-2} Soln:
 		\item	(a) $$V = \frac{F_{A0}X}{(-r_A)_\text{exit}}$$ Given: $X = 0.8$
@@ -149,25 +192,33 @@
 	\end{itemize}
 \end{frame}
 
-% \begin{frame}[allowframebreaks]{
-%
-% {\color{blue}Ex 2-3} Soln:\small
-%
-% (a)
-% \begin{align*}
-% 	&F_{A0}\frac{dX}{dV} = -r_A\\
-% 	&V = \int_0^VdV = F_{A0}\int_0^X\frac{dX}{-r_A(X)}
-% \end{align*}
-% Trapezoidal formula: $$\int_a^bf(x)dx\approx\frac{h}{2}(f_0 + 2f_1 + 2f_2 + \cdots + 2f_{n-1} + f_n)$$ Simpson's rule for $n$ even: $$\int_a^bf(x)dx\approx\frac{h}{3}(f_0 + 4f_1 + 2f_2 + 4f_3 + \cdots + 2f_{n-2} + 4f_{n-1} + f_n)$$ Applying Simpson's rule to Ex 2-3,
-% \begin{align*}
-% 	V &= F_{A0}\int_0^{0.8}\left(-\frac{1}{r_A(X)}\right)dX\\
-% 	&= F_{A0}\frac{\Delta X}{3}\left[\left(-\left.\frac{1}{r_A}\right|_{X=0}\right) + 4\left(-\left.\frac{1}{r_A}\right|_{X=0.2}\right)\right.\\
-% 	&\left.\hspace{5em}+ \cdots + \left(-\left.\frac{1}{r_A}\right|_{X=0.8}\right)\right]
-% \end{align*}
-% Using $\frac{1}{-r_A}$ values in Table 2-3 gives $V=2.165$m$^3$.
-%
-% (b) $$V = \int_0^{0.8}\left(\frac{F_{A0}}{-r_A}\right)dX$$ }
-\begin{frame}
+\begin{frame}[allowframebreaks]\frametitle{PFR example}
+
+	Ex 2-3 Solution:
+
+	(a)
+	\begin{align*}
+		&F_{A0}\frac{dX}{dV} = -r_A\\
+		&V = \int_0^VdV = F_{A0}\int_0^X\frac{dX}{-r_A(X)}
+	\end{align*}
+
+	Trapezoidal formula: 
+
+	$$\int_a^bf(x)dx\approx\frac{h}{2}(f_0 + 2f_1 + 2f_2 + \cdots + 2f_{n-1} + f_n)$$ 
+
+	Simpson's rule for $n$ even: $$\int_a^bf(x)dx\approx\frac{h}{3}(f_0 + 4f_1 + 2f_2 + 4f_3 + \cdots + 2f_{n-2} + 4f_{n-1} + f_n)$$
+
+	Applying Simpson's rule to Ex 2-3,
+	\begin{align*}
+		V &= F_{A0}\int_0^{0.8}\left(-\frac{1}{r_A(X)}\right)dX\\
+		&= F_{A0}\frac{\Delta X}{3}\left[\left(-\left.\frac{1}{r_A}\right|_{X=0}\right) + 4\left(-\left.\frac{1}{r_A}\right|_{X=0.2}\right)\right.\\
+		&\left.\hspace{5em}+ \cdots + \left(-\left.\frac{1}{r_A}\right|_{X=0.8}\right)\right]
+	\end{align*}
+
+	Using $\dfrac{1}{-r_A}$ values in Table 2-3 gives $V=2.165\,\text{m}^3$
+
+	(b) $$V = \int_0^{0.8}\left(\frac{F_{A0}}{-r_A}\right)dX$$
+
 	(c) Sketch of $X$ and $-r_A$ vs V?
 	\begin{itemize}
 		\item[(i)] Fix $X$, say $X = 0.2$
@@ -186,7 +237,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}\frametitle{PFR example}
 	\begin{itemize}
 		\item	{\color{blue}Ex 2-4} Comparison of CSTR and PFR sizes
 
@@ -197,65 +248,67 @@
 		\item	$\Rightarrow$ PFR will require a smaller volume than CSTR for same feed rate.
 	\end{itemize}
 \end{frame}
+\end{comment}
 
-\begin{frame}
-	\textbf{Remark}
-
-	We generally obtain $-r_A$ vs X from rate eqn, e.g. $$-r_A = kC_A$$ Consider flow reactor,
+\begin{frame}\frametitle{Summary so far}
+	\textbf{Remark}: we generally obtain $-r_A$ vs $X$ from rate equation, e.g. $-r_A = kC_A$
+	
+	Consider a flow reactor:
 	\begin{align*}
 		&F_A = F_{A0}(1 - X)\\
-		\Rightarrow&C_A = \frac{F_A}{v} = \frac{F_{A0}(1 - X)}{v}
+		&C_A = \frac{F_A}{q} = \frac{F_{A0}(1 - X)}{q}
 	\end{align*}
-	If $v = v_0$ {\color{red}(under what conditions would this hold?)}
-
-	then
+	If $q = q_0$ {\color{myGreen}(under what conditions would this hold?)}:
 	\begin{align*}
-		C_A &= \frac{F_{A0}}{v_0}(1 - X)\\
-		&= C_{A0}(1 - X)
+		C_A &= \frac{F_{A0}}{q_0}(1 - X)\\
+		C_A &= C_{A0}(1 - X)
 	\end{align*}
 	and $$-r_A = kC_{A0}(1 - X)$$
 \end{frame}
 
-\section{Reactor in Series}
-\begin{frame}\frametitle{2.4 \color{blue}Reactor in Series}
+%\section{Reactors in series}
+\begin{comment}
+
+\begin{frame}\frametitle{Reactors in series}
 	\begin{itemize}
 		\item	Example
 
-		We'll define conversion on basis of A fed to {\color{red}\underline{first}} reactor.
+		We'll define conversion on basis of A fed to {\color{myGreen}first} reactor.
 
-		$$\Rightarrow X_2 = \frac{\text{total moles of A reacted up point 2}}{\text{moles A fed to \underline{first} reactor}}$$
+		$$X_2 = \frac{\text{total moles of A reacted up point 2}}{\text{moles A fed to \underline{first} reactor}}$$
 
-		Appropriate design eqns for above configuration:
+		Appropriate design equations for above configuration:
 	\end{itemize}
 \end{frame}
-\begin{frame}
-	\begin{itemize}
-		\item	{\color{red}Reactor 1} $$V_1 = F_{A0}\int_0^{X_1}\frac{dX}{-r_A}$$
 
-		{\color{red}Reactor 2}
+\begin{frame}\frametitle{Reactors in series}
+	\begin{itemize}
+		\item	{\color{myGreen}Reactor 1} $$V_1 = F_{A0}\int_0^{X_1}\frac{dX}{-r_A}$$
+
+		{\color{myGreen}Reactor 2}
 		\begin{align*}
 			V_2 &= \frac{F_{A1} - F_{A2}}{-r_{A2}}\\
 			&= \frac{F_{A0}(1 - X_1) - F_{A0}(1 - X_2)}{-r_{A2}}\\
 			&= \frac{F_{A0}(X_2 - X_1)}{-r_{A2}}
 		\end{align*}
 
-		{\color{red}Reactor 3} $$V_1 = F_{A0}\int_{X_2}^{X_3}\frac{dX}{-r_A}$$
+		{\color{myGreen}Reactor 3} $$V_1 = F_{A0}\int_{X_2}^{X_3}\frac{dX}{-r_A}$$
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}\frametitle{Reactors in series}
 	\begin{itemize}
 		\item	Follows from $$\frac{dF_A}{dV} = r_A,\quad F_A = F_{A0}(1 - X)$$ Graphically,
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}\frametitle{Reactors in series}
 	\begin{itemize}
 		\item	In general $$V_\text{CSTR} = \frac{F_{A0}(X_\text{Aout} - X_\text{Ain})}{(-r_A)_\text{out}}$$ $$V_\text{PFR} = F_{A0}\int_{X_\text{in}}^{X_\text{out}}\frac{dX}{-r_A}$$
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}\frametitle{Reactors in series}
 	\begin{itemize}
 		\item	Consider $N$ CSTRs in series
 
@@ -263,9 +316,12 @@
 	\end{itemize}
 \end{frame}
 
-\section{Some Further Definitions}
-\begin{frame}\frametitle{Some Further Definitions}
+
+%\section{Some further definitions}
+\begin{frame}\frametitle{Some further definitions}
 	\begin{itemize}
-		\item	Space time $$\tau := \frac{V}{q_0}$$ time necessary to process one reactor volume of fluid based on entrance conditions.
+		\item	Space time, or residence time:
+		$$\tau = \frac{V}{q_0}$$ time necessary to process one reactor volume of fluid based on entrance conditions
 	\end{itemize}
 \end{frame}
+\end{comment}
