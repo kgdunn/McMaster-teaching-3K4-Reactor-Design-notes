@@ -563,7 +563,7 @@
 \end{frame}
 
 \begin{frame}\frametitle{Tubular reactors (covered on the board in class)}
-	Rearranging and dividing by $\Delta V$, $$\left[\frac{F_j|_{V+\Delta V} - F_j|_V}{\Delta V}\right] = r_j$$ Taking limit as $\Delta V \rightarrow 0$ $$\boxed{\frac{dF_j}{dV} = r_j}$$ Integral form: $$V_1 = \int_0^{V_1}dV = \int_{F_{j0}}^{F_{j1}}\frac{dF_j}{r_j}$$
+	Rearranging and dividing by $\Delta V$, $$\left[\frac{F_j|_{V+\Delta V} - F_j|_V}{\Delta V}\right] = r_j$$ Taking limit as $\Delta V \rightarrow 0$ $$\boxed{\frac{dF_j}{dV} = r_j}$$ Integral form: $$V = \int_0^{V}dV = \int_{F_{j0}}^{F_{jf}}\frac{dF_j}{r_j}$$
 \end{frame}
 
 \begin{frame}\frametitle{Tubular reactors (covered on the board in class)}
@@ -594,7 +594,7 @@
 	\end{align*}
 	Express design equation in terms of concentration: 
 	$$\frac{dF_A}{dV} = \frac{d(C_Aq)}{dV} = q\frac{dC_A}{dA}$$ 
-	$$\therefore q\frac{dC_A}{dV} = r_A = -kC_A$$
+	$$q\frac{dC_A}{dV} = r_A = -kC_A$$
 \end{frame}
 
 \begin{frame}\frametitle{PFR example}
@@ -676,6 +676,10 @@
 		\item[a)]{Batch reactor}
 
 		Differential form $\displaystyle\frac{dN_j}{dt} = r_jV$
+		\vspace{6pt}
+		\begin{itemize}
+			\item	{\color{myOrange}{Can we ever make a steady-state assumption for batch?}}
+		\end{itemize}
 		\vspace{24pt}
 		\item[b)]{CSTR} $$V = \frac{F_{j0} - F_j}{-r_j}$$
 	\end{itemize}
