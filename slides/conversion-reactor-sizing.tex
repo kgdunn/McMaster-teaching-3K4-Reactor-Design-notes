@@ -109,7 +109,7 @@
 		F_{A0}X &= \left(\frac{\text{moles }A\text{ fed}}{\text{time}}\right)\cdot\left(\frac{\text{moles }A\text{ reacted}}{\text{moles }A\text{ fed}}\right)\\
 		F_{A0}X &= \frac{\text{moles }A\text{ reacted}}{\text{time}}
 	\end{align*}
-	\vspace{-12pt}
+	\vspace{-36pt}
 	\begin{columns}[t]
 		\column{1.00\textwidth}
 			\begin{align*}
@@ -130,6 +130,8 @@
 			\end{align*}
 		\column{0.10\textwidth}
 	\end{columns}
+	\vspace{12pt}
+	{\color{myOrange}{Draw a picture here $\rightarrow$}}
 \end{frame}
 
 %\subsection{CSTR}
@@ -177,10 +179,7 @@
 	{\color{myOrange}{Design feature for PBR systems: \emph{catalyst weight}}}
 \end{frame}
 
-\begin{frame}\frametitle{Example}
-	Interactive / on the board
-\end{frame}
-% PFR example: not done
+% PFR example: not done. Used the slides below instead
 \begin{comment}
 \begin{frame}\frametitle{PFR example}
 	\begin{itemize}
@@ -250,10 +249,8 @@
 \end{frame}
 \end{comment}
 
-\begin{frame}\frametitle{Summary so far}
-	\textbf{Remark}: we generally obtain $-r_A$ vs $X$ from rate equation, e.g. $-r_A = kC_A$
-	
-	Consider a flow reactor:
+\begin{frame}\frametitle{{\color{myRed}{\sout{Summary so far}}}\,\,{\large Apply to a 1st order system}}
+	\textbf{Remark}: we generally obtain $-r_A$ vs $X$ from rate equation, e.g. $-r_A = kC_A$. Consider a flow reactor:
 	\begin{align*}
 		&F_A = F_{A0}(1 - X)\\
 		&C_A = \frac{F_A}{q} = \frac{F_{A0}(1 - X)}{q}
@@ -263,7 +260,70 @@
 		C_A &= \frac{F_{A0}}{q_0}(1 - X)\\
 		C_A &= C_{A0}(1 - X)
 	\end{align*}
-	and $$-r_A = kC_{A0}(1 - X)$$
+	and $$-r_A = k C_A = kC_{A0}(1 - X)$$
+\end{frame}
+
+\begin{frame}\frametitle{Example: data collected}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/example-2-2/raw-data.png}
+	\end{center}
+	\vfill
+	\begin{itemize}
+		\item	$F_{A0} = 0.4\,\text{mol.s}^{-1}$
+		\item	Isothermal and constant pressure; gas-phase
+		\item	We have \textbf{no idea what the reaction order is}
+	\end{itemize}
+	\vspace{96pt}
+	
+\end{frame}
+
+\begin{frame}\frametitle{Example: plotted}
+	\begin{center}
+		\includegraphics[width=.8\textwidth]{\imagedir/reactors/example-2-2/empty-plot.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{CSTR solution}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/example-2-2/CSTR-solution.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{PFR solution}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/example-2-2/PFR-solution.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Simpson's rules}
+	\begin{itemize}
+		\item	Got 3 equally-spaced points; with spacing = $h$?
+				$$ \int_{x_0}^{x_2} f(x) dx \approx \dfrac{h}{3}\Biggl[f(x_0) + 4f(x_1) + f(x_2) \Biggr]$$
+		\vspace{12pt}
+		\item	Got 4 equally-spaced points; with spacing = $h$?
+				$$ \int_{x_0}^{x_3} f(x) dx \approx \dfrac{3h}{8}\Biggl[f(x_0) + 3f(x_1) + 3f(x_2) + f(x_3)\Biggr]$$
+		\vspace{12pt}
+		\item	\small See Appendix A for other formulas (more general)
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}\frametitle{CSTR \emph{vs} PFR}
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{\imagedir/reactors/example-2-2/PFR-CSTR-difference.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Profiles along the reactor: $X$}
+	\begin{center}
+		\includegraphics[width=0.80\textwidth]{\imagedir/reactors/example-2-2/X-profile.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Profiles along the reactor: $r_A$}
+	\begin{center}
+		\includegraphics[width=0.90\textwidth]{\imagedir/reactors/example-2-2/rA-profile.png}
+	\end{center}
 \end{frame}
 
 %\section{Reactors in series}
