@@ -279,6 +279,12 @@
 
 \begin{frame}\frametitle{Example: plotted}
 	\begin{center}
+		\includegraphics[width=.8\textwidth]{\imagedir/reactors/example-2-2/empty-plot-modified.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Example: plotted (with best-fit line added)}
+	\begin{center}
 		\includegraphics[width=.8\textwidth]{\imagedir/reactors/example-2-2/empty-plot.png}
 	\end{center}
 \end{frame}
@@ -314,61 +320,147 @@
 	\end{center}
 \end{frame}
 
-\begin{frame}\frametitle{Profiles along the reactor: $X$}
-	\begin{center}
-		\includegraphics[width=0.80\textwidth]{\imagedir/reactors/example-2-2/X-profile.png}
-	\end{center}
+\begin{frame}\frametitle{Profiles along the reactor: $r_A$}
+	\begin{columns}[c]
+		\column{0.80\textwidth}
+		\begin{center}
+			\includegraphics[width=1.05\textwidth]{\imagedir/reactors/example-2-2/rA-profile.png}
+		\end{center}
+		\column{0.20\textwidth}
+			{\color{myOrange}{How was this found?}} (easy)
+	\end{columns}
 \end{frame}
 
-\begin{frame}\frametitle{Profiles along the reactor: $r_A$}
-	\begin{center}
-		\includegraphics[width=0.90\textwidth]{\imagedir/reactors/example-2-2/rA-profile.png}
-	\end{center}
+
+\begin{frame}\frametitle{Profiles along the reactor: $X$}
+	\begin{columns}[c]
+		\column{0.80\textwidth}
+			\begin{center}
+				\includegraphics[width=0.95\textwidth]{\imagedir/reactors/example-2-2/X-profile.png}
+			\end{center}
+		\column{0.20\textwidth}
+			{\color{myOrange}{How was this found?}}
+	\end{columns}	
 \end{frame}
 
 %\section{Reactors in series}
-\begin{comment}
+% \begin{frame}\frametitle{CSTRs: lab-scale}
+% 	\begin{columns}[t]
+% 		\column{0.50\textwidth}
+% 			\begin{center}
+% 				\includegraphics[width=\textwidth]{\imagedir/reactors/CSTRs/CSTR-lab-GMD.jpg}
+% 			\end{center}
+% 		\column{0.50\textwidth}
+% 			\begin{center}
+% 				\includegraphics[width=\textwidth]{\imagedir/reactors/CSTRs/CSTR-lab-back-view-GMD.png}
+% 			\end{center}
+% 	\end{columns}
+% \end{frame}
 
-\begin{frame}\frametitle{Reactors in series}
-	\begin{itemize}
-		\item	Example
-
-		We'll define conversion on basis of A fed to {\color{myGreen}first} reactor.
-
-		$$X_2 = \frac{\text{total moles of A reacted up point 2}}{\text{moles A fed to \underline{first} reactor}}$$
-
-		Appropriate design equations for above configuration:
-	\end{itemize}
+\begin{frame}\frametitle{Reactors in series: multiple CSTRs}
+	South Africa, the Ergo tailings plant
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/CSTRs/CSTRs-in-series-South-Africa.png}
+	\end{center}
 \end{frame}
 
-\begin{frame}\frametitle{Reactors in series}
-	\begin{itemize}
-		\item	{\color{myGreen}Reactor 1} $$V_1 = F_{A0}\int_0^{X_1}\frac{dX}{-r_A}$$
+\begin{frame}\frametitle{Flotation cells: Bolivia}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/CSTRs/flotation-flickr-6343899995_e9ecd80533_b-not-licensed.jpg}
+	\end{center}
+\end{frame}
 
-		{\color{myGreen}Reactor 2}
-		\begin{align*}
-			V_2 &= \frac{F_{A1} - F_{A2}}{-r_{A2}}\\
+\begin{frame}\frametitle{Reactors in series: multiple CSTRs}
+	\begin{columns}[t]
+		\column{0.99\textwidth}
+			\begin{center}
+				\includegraphics[width=1.1\textwidth]{\imagedir/reactors/CSTRs/CSTR-in-series.png}
+			\end{center}
+		\column{0.01\textwidth}
+		% 			
+	\end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{CSTR solution}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/example-2-2/CSTR-solution.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Rule for conversions in series}
+	\begin{exampleblock}{}
+		$$X_n = \frac{\text{total moles of A reacted leaving reactor }n}{\text{moles A fed to \textbf{first} reactor}}$$
+	\end{exampleblock}
+	
+	\vspace{12pt}
+	e.g. for 2 reactors in series
+	\begin{align*}
+		V_2 &= \frac{F_{A1} - F_{A2}}{-r_{A2}}\\
 			&= \frac{F_{A0}(1 - X_1) - F_{A0}(1 - X_2)}{-r_{A2}}\\
 			&= \frac{F_{A0}(X_2 - X_1)}{-r_{A2}}
-		\end{align*}
-
-		{\color{myGreen}Reactor 3} $$V_1 = F_{A0}\int_{X_2}^{X_3}\frac{dX}{-r_A}$$
-	\end{itemize}
+	\end{align*}
 \end{frame}
 
-\begin{frame}\frametitle{Reactors in series}
-	\begin{itemize}
-		\item	Follows from $$\frac{dF_A}{dV} = r_A,\quad F_A = F_{A0}(1 - X)$$ Graphically,
-	\end{itemize}
+\begin{frame}\frametitle{}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/CSTRs/plot-two-in-series.png}
+	\end{center}
 \end{frame}
 
-\begin{frame}\frametitle{Reactors in series}
-	\begin{itemize}
-		\item	In general $$V_\text{CSTR} = \frac{F_{A0}(X_\text{Aout} - X_\text{Ain})}{(-r_A)_\text{out}}$$ $$V_\text{PFR} = F_{A0}\int_{X_\text{in}}^{X_\text{out}}\frac{dX}{-r_A}$$
-	\end{itemize}
-\end{frame}
 
-\begin{frame}\frametitle{Reactors in series}
+% \begin{frame}\frametitle{Reactors in series}
+% 
+% 	We will define conversion on basis of A fed to {\color{myGreen}first} reactor.
+% 	\vspace{24pt}
+% 	
+% 	For example, for 2 reactors in series:
+% 	\begin{columns}[t]
+% 		\column{0.30\textwidth}
+% 			
+% 		\column{0.60\textwidth}
+% 			Reactor 1 conversion: defined in the usual way
+% 			\vspace{12pt}
+% 			
+% 			$$X_2 = \frac{\text{total moles of A reacted leaving reactor 2}}{\text{moles A fed to \textbf{first} reactor}}$$
+% 	\end{columns}
+% 		
+% 	%Appropriate design equations for above configuration:
+% \end{frame}
+% 
+% \begin{frame}\frametitle{Reactors in series: PFR then a CSTR}
+% 	\begin{itemize}
+% 		\item	{\color{myGreen}Reactor 1} $$V_1 = F_{A0}\int_0^{X_1}\frac{dX}{-r_A}$$
+% 
+% 		
+% 		\item	{\color{myGreen}Reactor 2}
+% 				\begin{align*}
+% 					V_2 &= \frac{F_{A1} - F_{A2}}{-r_{A2}}\\
+% 					&= \frac{F_{A0}(1 - X_1) - F_{A0}(1 - X_2)}{-r_{A2}}\\
+% 					&= \frac{F_{A0}(X_2 - X_1)}{-r_{A2}}
+% 				\end{align*}
+% 
+% 		%{\color{myGreen}Reactor 3} $$V_1 = F_{A0}\int_{X_2}^{X_3}\frac{dX}{-r_A}$$
+% 	\end{itemize}
+% \end{frame}
+
+% \begin{frame}\frametitle{Reactors in series}
+% 	\begin{itemize}
+% 		\item	Follows from $$\frac{dF_A}{dV} = r_A,\quad F_A = F_{A0}(1 - X)$$ Graphically,
+% 	\end{itemize}
+% \end{frame}
+
+% \begin{frame}\frametitle{Reactors in series}
+% 	In general:
+% 
+% 	$$V_\text{CSTR} = \frac{F_{A0}(X_\text{Aout} - X_\text{Ain})}{(-r_A)_\text{out}}$$ $$V_\text{PFR} = F_{A0}\int_{X_\text{in}}^{X_\text{out}}\frac{dX}{-r_A}$$
+% 	
+% \end{frame}
+
+% \begin{frame}\frametitle{}
+% 	\todo{Add figure 2.6 or Levenspiel equivalent}
+% \end{frame}
+
+\begin{frame}\frametitle{Reactors in series: multiple CSTRs}
 	\begin{itemize}
 		\item	Consider $N$ CSTRs in series
 
@@ -376,6 +468,25 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}\frametitle{Homework exercise}
+	\begin{itemize}
+		\item	Example on page 56 (F2011)
+		\item	Example on page 62 (F2006)
+	\end{itemize}
+	%\todo{SHOW FIGURE HERE}
+\end{frame}
+
+\begin{frame}\frametitle{}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/CSTRs/b.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/CSTRs/a.png}
+	\end{center}
+\end{frame}
 
 %\section{Some further definitions}
 \begin{frame}\frametitle{Some further definitions}
@@ -384,4 +495,4 @@
 		$$\tau = \frac{V}{q_0}$$ time necessary to process one reactor volume of fluid based on entrance conditions
 	\end{itemize}
 \end{frame}
-\end{comment}
+		%\end{comment}
