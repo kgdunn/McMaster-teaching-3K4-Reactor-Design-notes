@@ -1,0 +1,130 @@
+\begin{frame}\frametitle{Batch system}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/stoichiometry/Table3-3.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Batch systems (derivation on board)}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/batch/flickr-3366236801_5bf82b2022_b.jpg}
+	\end{center}
+	\see{Argone National Laboratory, \href{http://www.flickr.com/photos/argonne/3366236801}{batch deposition reactor}}
+\end{frame}
+
+\begin{frame}\frametitle{Flow system: columns 1, 2, 3, 4}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/stoichiometry/Table3-4.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Flow system: column 5 (concentration)}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/stoichiometry/c.jpeg}
+	\end{center}
+	Let's derive where this all comes from.
+\end{frame}
+
+
+\begin{frame}\frametitle{Summary from last class}
+	\begin{itemize}
+		\item	$F_A = F_{A0}\left(1-\frac{a}{a}X\right)$
+		\item	$F_B = F_{A0}\left(\Theta_B-\frac{b}{a}X\right)$
+		\item	$F_C = F_{A0}\left(\Theta_C+\frac{c}{a}X\right)$
+		\item	$F_D = F_{A0}\left(\Theta_D+\frac{d}{a}X\right)$
+	\end{itemize}
+	\begin{exampleblock}{In general, we write:}
+		$$F_j = F_{A0}\left(\Theta_j+\nu_j X\right)$$
+	\end{exampleblock}
+	\begin{itemize}
+		\item	$\nu_j$ = stoichiometric ratio, accounting for sign
+		\item	$\nu_B = -\frac{b}{a}$
+		\item	$\nu_D = +\frac{d}{a}$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{What you should recall from chemistry}
+	\begin{itemize}
+		\item	$y_{A}$ = mol fraction of A
+		\item	$p_A$ = partial pressure of A
+		\item	$P$ = total pressure
+		\item	$p_A = (y_A) (P)$ {\footnotesize\hfill {\color{myOrange}{$\leftarrow$ applies anywhere along the reactor}}}
+		\item	$p_{A0} = (y_{A0})(P_0)$ {\footnotesize\hfill {\color{myOrange}{$\leftarrow$ applies only at the feed point}}}
+		\item	but, $p_A = C_A RT$
+		\item	so, $(y_A) (P) = C_A RT$
+		\item	or $C_A = \dfrac{y_A P}{RT}$ {\footnotesize\hfill {\color{myOrange}{$\leftarrow$ applies anywhere along the reactor}}}
+		\item	and $C_{A0} = \dfrac{y_{A0} P_0}{RT_0}$ {\footnotesize\hfill {\color{myOrange}{$\leftarrow$ applies only at the feed point}}}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{In the printed notes, page 115 (F2011)}
+	\begin{itemize}
+		\item	Create a ``total concentration'' {\scriptsize (fictitious concentration)}
+		\item	$C_T = \dfrac{P}{ZRT}$
+		\item	but, $C_T = \dfrac{F_T}{v}$ or, as I prefer: $C_T = \dfrac{F_T}{q}$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{In the printed notes, page 116 (F2011)}
+	\begin{itemize}
+		\item	$C_T = \dfrac{F_T}{v} = \dfrac{P}{ZRT}$ {\footnotesize\hfill {\color{myOrange}{$\leftarrow$ applies anywhere along the reactor}}}
+		\item	$C_{T0} = \dfrac{F_{T0}}{v_0} = \dfrac{P_0}{Z_0RT_0}$ {\footnotesize\hfill {\color{myOrange}{$\leftarrow$ applies only at the feed point}}}
+	\end{itemize}
+	Assuming $Z_0$ = $Z$
+	\begin{exampleblock}{Most important equation for this page}
+		$$v = v_0 \left(\dfrac{F_T}{F_{T0}}\right)\left(\dfrac{P_0}{P}\right)\left(\dfrac{T}{T_{0}}\right)$$
+	\end{exampleblock}
+	\begin{itemize}
+		\item	How do we interpret this?
+		\item	Sign of $\left(\dfrac{P_0}{P}\right)$ and when is $\left(\dfrac{F_T}{F_{T0}}\right)=1$?
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}\frametitle{In the printed notes, page 116/117}
+	Recall the total flows (see columns 2 and 4)
+	\begin{itemize}
+		\item	Entry flow = $F_{T0}$ mols per second
+		\item	Flow at any other point = $F_T$ mols per second
+	\end{itemize}
+	$$\begin{array}{rcl}
+		F_T &=& F_{T0}+ F_{A0}\delta X \\ \\
+		\dfrac{F_T}{ F_{T0}} &=& 1 + \left(\dfrac{F_{A0}}{F_{T0}}\right)\delta X = 1 + \epsilon X \\ \\
+		\epsilon &=& y_{A0} \delta
+	\end{array} 
+	$$
+	\begin{exampleblock}{Back to our important equation ...}
+		\small
+		$$v = v_0 \left(\dfrac{F_T}{F_{T0}}\right)\left(\dfrac{P_0}{P}\right)\left(\dfrac{T}{T_{0}}\right) = v_0 \left(1 + \epsilon X\right)\left(\dfrac{P_0}{P}\right)\left(\dfrac{T}{T_{0}}\right) $$
+	\end{exampleblock}	
+\end{frame}
+
+\begin{frame}\frametitle{Middle of page 117 and top of page 118}
+	\begin{itemize}
+		\item	$C_j = \dfrac{F_j}{v}$ {\footnotesize\hfill {\color{myOrange}{$\leftarrow$ applies anywhere along the reactor}}}
+		\item	{\small {\footnotesize Numerator}: Sub in our definition for $F_j = F_{A0}\left(\Theta_j+\nu_j X\right) $}
+		\item	{\small {\footnotesize Denominator}: Sub in our important equation for volumetric flow, $v$}
+	\end{itemize}
+	\vspace{12pt}
+	$$C_j = \dfrac{F_j}{v} = \dfrac{F_{A0}\left(\Theta_j+\nu_j X\right)}{v_0 \left(1 + \epsilon X\right)\left(\dfrac{P_0}{P}\right)\left(\dfrac{T}{T_{0}}\right)}$$
+\end{frame}
+
+\begin{frame}\frametitle{Top of page 118}
+	The general concentration expression, for any species, at any point in the reactor:
+	\vspace{12pt}
+	\begin{exampleblock}{}
+		$$C_j =\dfrac{C_{A0}\left(\Theta_j+\nu_j X\right)}{\left(1 + \epsilon X\right)}\left(\dfrac{P}{P_0}\right)\left(\dfrac{T_0}{T}\right)$$
+	\end{exampleblock}	
+\end{frame}
+
+\begin{frame}\frametitle{Example}
+	A mixture of 28\% $\text{SO}_2$ and air, 72\% are added into a flow reactor at $P_0 = 1485\,\text{kPa}$ and $T_0 = 500K$
+	$$\begin{array}{rcl}
+		2\text{SO}_2 + \text{O}_2 &\leftrightharpoons& 2\text{SO}_3  \\
+		A + \frac{1}{2}B &\leftrightharpoons& C
+	\end{array} 
+	$$
+	The reaction takes place isothermally, and with no pressure drop. Express the outlet concentrations of ALL species as a function of conversion, $X$, only.
+	
+	\vspace{12pt}
+	{\color{myOrange}{Use the table provided to lay out your answer.}}
+\end{frame}

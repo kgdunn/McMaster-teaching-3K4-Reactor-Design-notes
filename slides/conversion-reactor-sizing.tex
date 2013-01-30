@@ -393,11 +393,17 @@
 \end{frame}
 
 \begin{frame}\frametitle{Rule for conversions in series}
+	
 	\begin{exampleblock}{}
-		$$X_n = \frac{\text{total moles of A reacted leaving reactor }n}{\text{moles A fed to \textbf{first} reactor}}$$
+		$$X_n = \frac{\text{\sout{total moles of A reacted, leaving reactor }}n}{\text{moles A fed to \textbf{first} reactor}}$$
+	\end{exampleblock}
+	\vspace{-12pt}
+	
+	\begin{exampleblock}{}
+		$$X_n = \frac{\text{\small total moles of A reacted from start, up to reactor }n}{\text{moles A fed to \textbf{first} reactor}}$$
 	\end{exampleblock}
 	
-	\vspace{12pt}
+	\vspace{-4pt}
 	e.g. for 2 reactors in series
 	\begin{align*}
 		V_2 &= \frac{F_{A1} - F_{A2}}{-r_{A2}}\\
@@ -500,4 +506,3 @@
 		$$\tau = \frac{V}{q_0}$$ time necessary to process one reactor volume of fluid based on entrance conditions
 	\end{itemize}
 \end{frame}
-		%\end{comment}
