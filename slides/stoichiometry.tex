@@ -24,7 +24,6 @@
 	Let's derive where this all comes from.
 \end{frame}
 
-
 \begin{frame}\frametitle{Summary from last class}
 	\begin{itemize}
 		\item	$F_A = F_{A0}\left(1-\frac{a}{a}X\right)$
@@ -39,20 +38,6 @@
 		\item	$\nu_j$ = stoichiometric ratio, accounting for sign
 		\item	$\nu_B = -\frac{b}{a}$
 		\item	$\nu_D = +\frac{d}{a}$
-	\end{itemize}
-\end{frame}
-
-\begin{frame}\frametitle{What you should recall from chemistry}
-	\begin{itemize}
-		\item	$y_{A}$ = mol fraction of A
-		\item	$p_A$ = partial pressure of A
-		\item	$P$ = total pressure
-		\item	$p_A = (y_A) (P)$ {\footnotesize\hfill {\color{myOrange}{$\leftarrow$ applies anywhere along the reactor}}}
-		\item	$p_{A0} = (y_{A0})(P_0)$ {\footnotesize\hfill {\color{myOrange}{$\leftarrow$ applies only at the feed point}}}
-		\item	but, $p_A = C_A RT$
-		\item	so, $(y_A) (P) = C_A RT$
-		\item	or $C_A = \dfrac{y_A P}{RT}$ {\footnotesize\hfill {\color{myOrange}{$\leftarrow$ applies anywhere along the reactor}}}
-		\item	and $C_{A0} = \dfrac{y_{A0} P_0}{RT_0}$ {\footnotesize\hfill {\color{myOrange}{$\leftarrow$ applies only at the feed point}}}
 	\end{itemize}
 \end{frame}
 
@@ -116,6 +101,33 @@
 	\end{exampleblock}	
 \end{frame}
 
+\begin{frame}\frametitle{What you should recall from chemistry}
+	\begin{itemize}
+		\item	$y_{A}$ = mol fraction of A
+		\item	$p_A$ = partial pressure of A
+		\item	$P$ = total pressure
+		\item	$p_A = (y_A) (P)$ {\footnotesize\hfill {\color{myOrange}{$\leftarrow$ applies anywhere along the reactor}}}
+		\item	$p_{A0} = (y_{A0})(P_0)$ {\footnotesize\hfill {\color{myOrange}{$\leftarrow$ applies only at the feed point}}}
+		\item	but, $p_A = C_A RT$
+		\item	so, $(y_A) (P) = C_A RT$
+		\item	or $C_A = \dfrac{y_A P}{RT}$ {\footnotesize\hfill {\color{myOrange}{$\leftarrow$ applies anywhere along the reactor}}}
+		\item	and $C_{A0} = \dfrac{y_{A0} P_0}{RT_0}$ {\footnotesize\hfill {\color{myOrange}{$\leftarrow$ applies only at the feed point}}}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Flow system: columns 1, 2, 3, 4}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/stoichiometry/Table3-4.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Flow system: column 5 (concentration)}
+	\begin{center}
+		\includegraphics[width=\textwidth]{\imagedir/reactors/stoichiometry/c.jpeg}
+	\end{center}
+	(Derived in the previous class)
+\end{frame}
+
 \begin{frame}\frametitle{Example}
 	A mixture of 28\% $\text{SO}_2$ and air, 72\% are added into a flow reactor at $P_0 = 1485\,\text{kPa}$ and $T_0 = 500K$
 	$$\begin{array}{rcl}
@@ -127,4 +139,29 @@
 	
 	\vspace{12pt}
 	{\color{myOrange}{Use the table provided to lay out your answer.}}
+\end{frame}
+
+\begin{frame}\frametitle{Where we left off ...}
+	{\small Assuming isothermal behaviour, and no pressure drop}
+	
+	\begin{columns}[b]
+		\column{0.75\textwidth}
+			\begin{tabular}{l|l}
+				\textbf{Species}	&	\textbf{Concentrations} \\ \hline
+				\textbf{A} = SO$_2$	&	$C_A = C_{A0}\left(\dfrac{1-X}{1+\epsilon X} \right)$ \\	 \\
+				\textbf{B} = O$_2$ 	&	$C_B = C_{A0}\left(\dfrac{\Theta_B-\frac{1}{2}X}{1+\epsilon X} \right)$ \\	\\
+				\textbf{C} = SO$_2$	&	$C_C = C_{A0}\left(\dfrac{\Theta_C+\frac{1}{1}X}{1+\epsilon X} \right)$ \\	\\
+				\textbf{I} = N$_2$	&	$C_I = C_{A0}\left(\dfrac{\Theta_I}{1+\epsilon X} \right)$
+			\end{tabular}
+		\column{0.25\textwidth}
+			\textbf{Unknowns}
+			\\
+			$C_A0$ \\ $\epsilon$ \\ $\Theta_B$ \\ $\Theta_C$ \\ $\Theta_I$
+	\end{columns}	
+\end{frame}
+
+\begin{frame}\frametitle{Concentration profile with conversion}
+	\begin{center}
+		\includegraphics[width=.8\textwidth]{\imagedir/reactors/example-3-5/concentration-profile.png}
+	\end{center}
 \end{frame}
